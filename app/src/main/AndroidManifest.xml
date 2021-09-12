@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantMobileApp">
-        <activity android:name=".AboutUs"></activity>
+        <activity android:name=".ViewOrder"></activity>
+        <activity android:name=".EditDelivery" />
+        <activity android:name=".OrderComplete" />
+        <activity android:name=".DeliveryOrder" />
+        <activity android:name=".AboutUs" />
         <activity android:name=".CalPrice" />
         <activity android:name=".MainActivity">
             <intent-filter>

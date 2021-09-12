@@ -2,6 +2,13 @@
     <string name="app_name">Restaurant-Mobile-App</string>
     <string name="foodpricehome">1000</string>
 
+    //toolbar
+    <string name="txt_toolbarName">Order Delivery</string>
+    <string name="txt_toolbarName2">Edit Delivery Details</string>
+    <string name="txt_toolbarName3">Order Confirmation</string>
+    <string name="txt_toolbarName5">Order Details</string>
+    <string name="txt_toolbarName4">About Us</string>
+
     //aboutus
     <string name="tv_createby">Create By Food Factory (pvt)</string>
     <string name="tv_likeus">Like us on</string>
@@ -11,7 +18,20 @@
     <string name="tv_aboutus2">We created this application for a better way to \n order and delivery your favourite food items.
         Using that \n save your time and money.</string>
 
-    //toolbar
-    <string name="txt_toolbarName4">About Us</string>
+    //delivery
+    <string name="tv_name">Customer Name</string>
+    <string name="tv_phone">Contact Number</string>
+    <string name="tv_address">Delivery Address</string>
+    <string name="tv_email">Email</string>
+    <string name="edtxt_email">@gmail.com</string>
+    <string name="checkBox_accpt">I Accept terms and Condition</string>
+    <string name="btn_deliveryCnfrm">Confirm Delivery</string>
+    <string name="btn_editDelivery">Edit Delivery Details</string>
+
+    //order completed
+    <string name="tv_odercmplted">Order Completed</string>
+    <string name="tv_thankyou">Thank You! We\'ve received your Details</string>
+    <string name="btn_menu">Menu</string>
+    <string name="btn_orderedit">Edit Delivery Details</string>
 
 </resources>
