@@ -15,9 +15,10 @@
         android:id="@+id/food_layout_id">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="120dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:id="@+id/foodImg"
+
             android:src="@drawable/ic_launcher_background"/>
 
         <TextView
@@ -25,7 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Food Name"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="40dp"
         android:textSize="15dp"
         android:layout_toRightOf="@+id/foodImg"
         android:id="@+id/foodName"/>
@@ -37,18 +38,20 @@
             android:layout_below="@id/foodName"
             android:layout_toRightOf="@+id/foodImg"
             android:layout_marginTop="8dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="40dp"
             android:id="@+id/foodprice"/>
+
         <Button
+            android:id="@+id/buynow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Order Now"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="15dp"
             android:layout_marginRight="10dp"
-            android:textSize="15dp"
-            android:id="@+id/buynow"/>
+            android:layout_marginBottom="15dp"
+            android:text="Order Now"
+            android:textSize="13dp"
+            app:backgroundTint="@android:color/holo_red_light" />
 
 
 
