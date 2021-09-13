@@ -11,7 +11,9 @@
     <string name="txt_toolbarName6">Payment</string>
     <string name="txt_toolbarName7">Order Details</string>
     <string name="txt_toolbarName8">Payment Confirmation </string>
-    <string name="txt_toolbarName9"> View Payment  </string>
+    <string name="txt_toolbarName10"> Food Item  </string>
+    <string name="txt_toolbarName11"> Table List  </string>
+    <string name="txt_toolbarName12"> Select Quntity  </string>
 
     //aboutus
     <string name="tv_createby">Create By Food Factory (pvt)</string>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    app:cardCornerRadius="10dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:id="@+id/table_layout_id">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/tableImg"
+            android:src="@drawable/table1"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Table Category"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:textSize="15dp"
+            android:layout_toRightOf="@+id/tableImg"
+            android:id="@+id/tableName"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Price"
+            android:layout_below="@id/tableName"
+            android:layout_toRightOf="@+id/tableImg"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="40dp"
+            android:id="@+id/tableprice"/>
+
+        <Button
+            android:id="@+id/booknow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:text="Book Now"
+            android:textSize="13dp"
+            app:backgroundTint="@color/btn_footer" />
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

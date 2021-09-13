@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantMobileApp">
-        <activity android:name=".ViewPayment"></activity>
+        <activity android:name=".TableList"></activity>
+        <activity android:name=".ViewPayment" />
         <activity android:name=".PaymentComplete" />
         <activity android:name=".Payment" />
         <activity android:name=".ViewOrder" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".TableList">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -14,11 +14,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">>
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/aboutusi1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -31,24 +29,16 @@
             android:layout_centerVertical="true"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:text="@string/txt_toolbarName10"
+            android:text="@string/txt_toolbarName11"
             android:textColor="@color/white"
             android:textSize="18dp" />
     </RelativeLayout>
 
-    <Button
-        android:id="@+id/btn_gotable"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="gototable"
-        android:text="Table Booking"
-        android:layout_marginTop="35dp"/>
-
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclehome"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"/>
+        android:id="@+id/recycletable"
+        android:layout_marginTop="40dp"/>
 
 </RelativeLayout>
