@@ -110,18 +110,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
-    <EditText
-        android:id="@+id/ed_amount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:ems="10"
-        android:hint="@string/ed_amount"
-        android:inputType="number"
-        app:layout_constraintBaseline_toBaselineOf="@+id/id_amount"
-        app:layout_constraintStart_toEndOf="@+id/id_amount" />
-
     <TextView
         android:id="@+id/id_no"
         android:layout_width="wrap_content"
@@ -141,12 +129,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="21dp"
         android:layout_marginLeft="21dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:hint="@string/ed_no"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/id_no"
-        app:layout_constraintTop_toBottomOf="@+id/ed_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_payPrice" />
 
     <EditText
         android:id="@+id/ed_date"
@@ -181,11 +169,23 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
+        android:onClick="gotoPaymentComplete"
         android:text="@string/Id_btnpay"
         app:backgroundTint="@color/btn_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ed_valid" />
+
+    <TextView
+        android:id="@+id/tv_payPrice"
+        android:layout_width="52dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="48dp"
+        android:textSize="20dp"
+        app:layout_constraintStart_toEndOf="@+id/id_amount"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

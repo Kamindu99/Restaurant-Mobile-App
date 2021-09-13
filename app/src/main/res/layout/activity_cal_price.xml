@@ -98,6 +98,7 @@
         android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
         android:backgroundTint="@android:color/holo_red_light"
+        android:onClick="gotopayment"
         android:text="Continue to Pay"
         android:textAllCaps="false"
         android:textSize="20dp"

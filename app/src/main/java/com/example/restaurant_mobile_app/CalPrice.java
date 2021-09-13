@@ -2,12 +2,17 @@ package com.example.restaurant_mobile_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CalPrice extends AppCompatActivity {
     ImageView foodImg;
@@ -53,8 +58,24 @@ public class CalPrice extends AppCompatActivity {
 
         foodprice.addTextChangedListener(textWatcher);
         quntity.addTextChangedListener(textWatcher);
+    }
 
+    public void gotopayment (View view) {
+        Context context = getApplicationContext();
+        CharSequence message = "Pay total price";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context, message, duration);
+        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 100);
+        toast.show();
 
+        Intent intent = new Intent(CalPrice.this, Payment.class);
+
+        TextView textView=(TextView)findViewById(R.id.total);
+
+        String totalp= textView.getText().toString();
+        intent.putExtra("total",totalp);
+        startActivity(intent);
 
     }
-}
+
+    }
