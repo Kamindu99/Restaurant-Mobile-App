@@ -10,6 +10,8 @@
     <color name="toolbar">#ff7800</color>
     <color name="underline">#D8D6D6</color>
     <color name="btn_footer">#FF4747</color>
+    <color name="card_item">#f7f7f7</color>
+    <color name="card_name">#272f59</color>
 
 
 </resources>

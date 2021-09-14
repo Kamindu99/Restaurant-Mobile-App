@@ -7,7 +7,8 @@
     android:layout_marginLeft="20dp"
     android:layout_marginRight="20dp"
     android:layout_marginTop="10dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    android:backgroundTint="@color/card_item">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,40 +16,63 @@
         android:id="@+id/food_layout_id">
 
         <ImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
             android:id="@+id/foodImg"
-
-            android:src="@drawable/ic_launcher_background"/>
-
-        <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Food Name"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
-        android:textSize="15dp"
-        android:layout_toRightOf="@+id/foodImg"
-        android:id="@+id/foodName"/>
+            android:src="@drawable/koththu"
+            android:layout_marginLeft="5dp"/>
 
         <TextView
+            android:id="@+id/foodName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Price"
-            android:layout_below="@id/foodName"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="17dp"
             android:layout_toRightOf="@+id/foodImg"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="40dp"
-            android:id="@+id/foodprice"/>
+            android:text="Food Name"
+            android:textColor="@color/card_name"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="180dp"
+            android:layout_height="40dp"
+            android:orientation="horizontal"
+            android:layout_toRightOf="@id/foodImg"
+            android:layout_below="@id/foodName">
+
+            <TextView
+                android:id="@+id/foodpricers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foodName"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/foodImg"
+                android:text="Rs. "
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/foodprice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/foodName"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@+id/foodImg"
+                android:text="Price"
+                android:textSize="16sp" />
+        </LinearLayout>
 
         <Button
             android:id="@+id/buynow"
-            android:layout_width="wrap_content"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentBottom="true"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="8dp"
             android:text="Order Now"
             android:textSize="13dp"
             app:backgroundTint="@android:color/holo_red_light" />

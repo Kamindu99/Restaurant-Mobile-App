@@ -1,5 +1,6 @@
 package com.example.restaurant_mobile_app;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -11,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 

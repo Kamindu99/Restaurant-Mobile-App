@@ -10,29 +10,7 @@
 
     <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="gototablebook"
-            android:text="Table Booking"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/underline" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="gotoabout"
-            android:text="About Us"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:backgroundTint="@color/underline" />
-
+       android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclehome"

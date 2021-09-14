@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Restaurant-Mobile-App</string>
+    <string name="app_name">Food Factory</string>
     <string name="foodpricehome">1000</string>
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>

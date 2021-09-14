@@ -13,12 +13,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="40dp"
         android:text="@string/tv_foodfactory"
         android:textColor="@color/black"
         android:textSize="34sp"
         app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tv_cmpnyaddress"
@@ -153,9 +152,8 @@
         android:layout_height="147dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo" />
 
 

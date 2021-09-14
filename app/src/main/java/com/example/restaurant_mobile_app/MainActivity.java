@@ -46,29 +46,31 @@ public class MainActivity extends AppCompatActivity {
 
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull  MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.nav_home:
-                        Toast.makeText(getApplicationContext(), "Home Panel is Open", Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.nav_table:
-                        Toast.makeText(getApplicationContext(), "Table booking Panel is Open", Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.nav_contactus:
-                        Toast.makeText(getApplicationContext(), "contact us Panel is Open", Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.nav_aboutus:
-                        Toast.makeText(getApplicationContext(), "about us Panel is Open", Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
+            public boolean onNavigationItemSelected(MenuItem item){
+                int id =item.getItemId();
+                if (id==R.id.nav_home){
+                    Toast.makeText(getApplicationContext(), "This is Home Page", Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity( new Intent(MainActivity.this,MainActivity.class));
                 }
-                return false;
+                else  if(id ==R.id.nav_table){
+                    Toast.makeText(getApplicationContext(), "This is Table Booking Page", Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity( new Intent(MainActivity.this,TableList.class));
+                }
+                else  if(id ==R.id.nav_contactus){
+                    Toast.makeText(getApplicationContext(), "This is ContactUs Page", Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity( new Intent(MainActivity.this,AboutUs.class));
+                }
+                else  if(id ==R.id.nav_aboutus){
+                    Toast.makeText(getApplicationContext(), "This is AboutUs Page", Toast.LENGTH_LONG).show();
+                    drawerLayout.closeDrawer(GravityCompat.START);
+                    startActivity( new Intent(MainActivity.this,AboutUs.class));
+                }
+
+                drawerLayout.closeDrawer(GravityCompat.START);
+                return true;
             }
         });
 
@@ -78,26 +80,25 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         foodList=new ArrayList<>();
-        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","1000"));
-        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","2000"));
-        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","3000"));
-        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","4000"));
-        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","1000"));
-        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","2000"));
-        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","3000"));
-        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","4000"));
-        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","1000"));
-        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","2000"));
-        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","3000"));
-        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","4000"));
-        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","1000"));
-        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","2000"));
-        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","3000"));
-        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","4000"));
-        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","1000"));
-        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","2000"));
-        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","3000"));
-        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","4000"));
+        foodList.add(new FoodModel(R.drawable.friderice,"Fried Rice","300"));
+        foodList.add(new FoodModel(R.drawable.koththu,"Koththu","350"));
+        foodList.add(new FoodModel(R.drawable.biriyani,"Biriyani","450"));
+        foodList.add(new FoodModel(R.drawable.noodles,"Noodles","200"));
+        foodList.add(new FoodModel(R.drawable.cheesebur,"Cheese Burger","600"));
+        foodList.add(new FoodModel(R.drawable.idi,"String Hopper","150"));
+        foodList.add(new FoodModel(R.drawable.crabcurry,"Lagoon Crab Curry","400"));
+        foodList.add(new FoodModel(R.drawable.seafoodfriedrice,"Seafood Fried Rice","650"));
+        foodList.add(new FoodModel(R.drawable.hotdog,"Chicken Hot Dog","350"));
+        foodList.add(new FoodModel(R.drawable.vegitablenoodles,"Vegetable Noodles","180"));
+        foodList.add(new FoodModel(R.drawable.soup,"Wonton Egg Noodle Soup","150"));
+        foodList.add(new FoodModel(R.drawable.chickenwings,"Spicy Chicken Wings","400"));
+        foodList.add(new FoodModel(R.drawable.sawan,"Full Sawan","1400"));
+        foodList.add(new FoodModel(R.drawable.pizza2,"Vegetable Pizza","1300"));
+        foodList.add(new FoodModel(R.drawable.piz,"Chicken Pizza","1500"));
+        foodList.add(new FoodModel(R.drawable.hawaiianpizza,"Hawaiian Pizza","1600"));
+        foodList.add(new FoodModel(R.drawable.nasigoreng,"Nasi Goreng ","480"));
+
+
 
         FoodAdapter adapter=new FoodAdapter(foodList,this);
         recyclerView.setAdapter(adapter);
@@ -110,6 +111,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public boolean onNavigationItemSelected(MenuItem item){
+        int id =item.getItemId();
+        if (id==R.id.nav_home){
+            startActivity( new Intent(MainActivity.this,AboutUs.class));
+        }
+        else  if(id ==R.id.nav_aboutus){
+
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
 
     public void gototablebook (View view){
         Intent intent = new Intent(this,TableList.class);
