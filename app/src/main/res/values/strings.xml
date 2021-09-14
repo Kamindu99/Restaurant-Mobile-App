@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Restaurant-Mobile-App</string>
     <string name="foodpricehome">1000</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
 
     //toolbar
     <string name="txt_toolbarName">Order Delivery</string>
@@ -41,7 +44,6 @@
     <string name="btn_orderedit">Edit Delivery Details</string>
 
     //Payment
-
     <string name="id_name">Name</string>
     <string name="ed_name">Enter Name</string>
     <string name="id_card">Card type</string>
@@ -69,7 +71,6 @@
 
     <string name="id_message"> Payment Successful</string>
     <string name="btnsee">View Payment</string>
-
     <string name="id_delmsg">Delivery is only within 5 km</string>
     <string name="btndeliver">Add to deliver</string>
     <string name="btnhome">Home</string>

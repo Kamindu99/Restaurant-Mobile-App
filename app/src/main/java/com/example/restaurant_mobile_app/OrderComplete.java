@@ -12,6 +12,9 @@ public class OrderComplete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_order_complete);
+        setTitle("Order Confirmation");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 

@@ -10,5 +10,8 @@ public class ViewOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_order);
+        setTitle("View Order Details");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

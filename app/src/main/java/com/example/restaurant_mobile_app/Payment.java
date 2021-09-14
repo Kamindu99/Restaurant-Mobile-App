@@ -16,6 +16,9 @@ public class Payment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        setTitle("Payment");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView textView=(TextView)findViewById(R.id.tv_payPrice);
         Intent receve = getIntent();

@@ -1,6 +1,7 @@
 package com.example.restaurant_mobile_app;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -18,10 +19,13 @@ public class TableList extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_table_list);
+        setTitle("Table Booking");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         recyclerView2=findViewById(R.id.recycletable);
 
-        recyclerView2.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView2.setLayoutManager(new GridLayoutManager(this,2));
         recyclerView2.setHasFixedSize(true);
 
         tableList=new ArrayList<>();
@@ -37,10 +41,6 @@ public class TableList extends AppCompatActivity {
 
         TableAdapter adapter=new TableAdapter(tableList,this);
         recyclerView2.setAdapter(adapter);
-
-
-
-
 
     }
 }

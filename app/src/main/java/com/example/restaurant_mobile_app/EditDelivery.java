@@ -16,6 +16,9 @@ public class EditDelivery extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_delivery);
+        setTitle("Edit Delivery Details");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         TextView text1=findViewById(R.id.edtxt_name2);
         TextView text2=findViewById(R.id.edtxt_phone2);

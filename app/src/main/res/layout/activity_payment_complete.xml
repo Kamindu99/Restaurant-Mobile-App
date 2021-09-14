@@ -6,66 +6,66 @@
     android:layout_height="match_parent"
     tools:context=".PaymentComplete">
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:background="@color/toolbar"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:src="@drawable/ic_baseline_arrow_back_24" />
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/txt_toolbarName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="42dp"
-            android:text="@string/txt_toolbarName2"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
-    </RelativeLayout>
-
+          <ImageView
+              android:id="@+id/imageView"
+              android:layout_width="57dp"
+              android:layout_height="58dp"
+              android:layout_marginStart="32dp"
+              android:layout_marginLeft="32dp"
+              android:layout_marginTop="48dp"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+              app:srcCompat="@drawable/right"
+             />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+          <TextView
+              android:id="@+id/id_message"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginStart="25dp"
+              android:layout_marginLeft="25dp"
+              android:layout_marginTop="58dp"
+              android:text="@string/id_message"
+              android:textColor="@color/black"
+              android:textSize="20sp"
+              tools:text="Payment Successful" />
     <TextView
-        android:id="@+id/id_message"
+        android:id="@+id/id_message2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
         android:text="@string/id_message"
         android:textColor="@color/black"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        tools:text="Payment Successful" />
+        android:textSize="14sp"
+        tools:text="Thank you Payment with us" />
+</LinearLayout>
 
-    <Button
-        android:id="@+id/btnsee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="84dp"
-        android:onClick="gotoView"
-        android:text="@string/btnsee"
-        app:backgroundTint="@color/btn_footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_message" />
+      </LinearLayout>
+
+      <Button
+          android:id="@+id/btnsee"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:onClick="gotoView"
+          android:text="@string/btnsee"
+          app:backgroundTint="@color/btn_footer"
+          android:layout_marginTop="20pt"
+          android:layout_marginLeft="65pt"/>
+
 
     <TextView
         android:id="@+id/id_delmsg"
@@ -73,53 +73,33 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginLeft="84dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="75dp"
         android:text="@string/id_delmsg"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnsee" />
+        />
 
     <Button
         android:id="@+id/btndeliver"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="5pt"
+        android:layout_marginLeft="62pt"
         android:onClick="gotoDelivery"
         android:text="@string/btndeliver"
         app:backgroundTint="@color/btn_footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/id_delmsg" />
+     />
 
     <Button
         android:id="@+id/btnhome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="50pt"
+        android:layout_marginLeft="80pt"
         android:onClick="gotoHome"
         android:text="@string/btnhome"
         app:backgroundTint="@color/btn_footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btndeliver" />
+       />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="57dp"
-        android:layout_height="58dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:srcCompat="@drawable/right" />
-
-
+  </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

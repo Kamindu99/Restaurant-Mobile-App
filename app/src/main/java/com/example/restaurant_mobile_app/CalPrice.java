@@ -23,6 +23,9 @@ public class CalPrice extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cal_price);
+        setTitle("Select Quantity");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         foodImg=findViewById(R.id.food_detail_img);
         foodName=findViewById(R.id.food_detail_name);

@@ -16,6 +16,9 @@ public class DeliveryOrder extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery_order);
+        setTitle("Deliver Order");
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void gotocomplete (View view){
