@@ -209,7 +209,6 @@
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:layout_marginBottom="16dp"
-        android:onClick="gotocomplete"
         android:text="@string/btn_editDelivery"
         app:backgroundTint="@color/btn_footer"
         app:layout_constraintBottom_toBottomOf="parent"
