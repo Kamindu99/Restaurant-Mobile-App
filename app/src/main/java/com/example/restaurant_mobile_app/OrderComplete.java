@@ -29,7 +29,7 @@ public class OrderComplete extends AppCompatActivity {
     }
 
     public void gotomenu (View view){
-        Intent intent = new Intent(this,AboutUs.class);
+        Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
     }
     public void gotoview (View view){
