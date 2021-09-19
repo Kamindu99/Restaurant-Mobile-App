@@ -16,16 +16,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TableList" />
-        <activity android:name=".ViewPayment" />
-        <activity android:name=".PaymentComplete" />
-        <activity android:name=".Payment" />
-        <activity android:name=".ViewOrder" />
-        <activity android:name=".EditDelivery" />
-        <activity android:name=".OrderComplete" />
-        <activity android:name=".DeliveryOrder" />
-        <activity android:name=".AboutUs" />
-        <activity android:name=".CalPrice" />
+        <activity android:name=".TableList" android:parentActivityName=".MainActivity"/>
+        <activity android:name=".ViewPayment" android:parentActivityName=".PaymentComplete"/>
+        <activity android:name=".PaymentComplete" android:parentActivityName=".Payment"/>
+        <activity android:name=".Payment" android:parentActivityName=".AboutUs"/>
+        <activity android:name=".ViewOrder" android:parentActivityName=".OrderComplete"/>
+        <activity android:name=".EditDelivery" android:parentActivityName=".OrderComplete"/>
+        <activity android:name=".OrderComplete" android:parentActivityName=".DeliveryOrder"/>
+        <activity android:name=".DeliveryOrder" android:parentActivityName=".PaymentComplete"/>
+        <activity android:name=".AboutUs" android:parentActivityName=".MainActivity" />
+        <activity android:name=".CalPrice" android:parentActivityName=".MainActivity"/>
         <activity android:name=".MainActivity"/>
 
         <meta-data
