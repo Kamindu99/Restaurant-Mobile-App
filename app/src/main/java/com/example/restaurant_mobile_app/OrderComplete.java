@@ -23,8 +23,6 @@ public class OrderComplete extends AppCompatActivity {
         Bundle bundle=intent2.getExtras();
         Intent intent = new Intent(this,EditDelivery.class);
         intent.putExtra("ABC",bundle);
-
-
         startActivity(intent);
     }
 
@@ -33,7 +31,10 @@ public class OrderComplete extends AppCompatActivity {
         startActivity(intent);
     }
     public void gotoview (View view){
+        Intent intent2= getIntent();
+        Bundle bundle=intent2.getExtras();
         Intent intent = new Intent(this,ViewOrder.class);
+        intent.putExtra("ABC",bundle);
         startActivity(intent);
     }
 

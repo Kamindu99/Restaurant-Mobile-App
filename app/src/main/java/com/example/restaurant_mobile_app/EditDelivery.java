@@ -1,5 +1,6 @@
 package com.example.restaurant_mobile_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
@@ -7,10 +8,25 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 public class EditDelivery extends AppCompatActivity {
+
+    EditText name,phone,address1,address2,address3,email;
+    Button btnUpdate;
+    Delivery delivery;
+    DatabaseReference dbRef;
+    long maxID;
+    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +36,30 @@ public class EditDelivery extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView text1=findViewById(R.id.edtxt_name2);
-        TextView text2=findViewById(R.id.edtxt_phone2);
-        TextView text3=findViewById(R.id.edtxt_address_1);
-        TextView text4=findViewById(R.id.edtxt_address_2);
-        TextView text5=findViewById(R.id.edtxt_address3_3);
-        TextView text6=findViewById(R.id.edtxt_email2);
+        name=findViewById(R.id.edtxt_name2);
+        phone=findViewById(R.id.edtxt_phone2);
+        address1=findViewById(R.id.edtxt_address_1);
+        address2=findViewById(R.id.edtxt_address_2);
+        address3=findViewById(R.id.edtxt_address3_3);
+        email=findViewById(R.id.edtxt_email2);
+
+        btnUpdate=findViewById(R.id.btn_editdelivery);
+
+        delivery=new Delivery();
+
+        dbRef= FirebaseDatabase.getInstance().getReference().child("Delivery");
+        dbRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.exists())
+                    maxID=(snapshot.getChildrenCount());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         Intent receve = getIntent();
         Bundle page1= receve.getBundleExtra("ABC");
@@ -35,32 +69,58 @@ public class EditDelivery extends AppCompatActivity {
         String mzge4 = page1.getString("Extra4");
         String mzge5 = page1.getString("Extra5");
         String mzge6 = page1.getString("Extra6");
+        String mzge7 = page1.getString("Extra7");
 
-        text1.setText(mzge1);
-        text2.setText(mzge2);
-        text3.setText(mzge3);
-        text4.setText(mzge4);
-        text5.setText(mzge5);
-        text6.setText(mzge6);
+        name.setText(mzge1);
+        phone.setText(mzge2);
+        address1.setText(mzge3);
+        address2.setText(mzge4);
+        address3.setText(mzge5);
+        email.setText(mzge6);
+        id=mzge7;
+
+        btnUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference upRef= FirebaseDatabase.getInstance().getReference().child("Delivery");
+                upRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChild(id)) {
+                            try {
+                                delivery.setName(name.getText().toString().trim());
+                                delivery.setPhone(Integer.parseInt(phone.getText().toString().trim()));
+                                delivery.setAddress1(address1.getText().toString().trim());
+                                delivery.setAddress2(address2.getText().toString().trim());
+                                delivery.setAddress3(address3.getText().toString().trim());
+                                delivery.setEmail(email.getText().toString().trim());
+
+                                dbRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
+                                dbRef.setValue(delivery);
+                                Toast.makeText(getApplicationContext(), "SuccessFully Update", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(EditDelivery.this,OrderComplete.class);
+                                startActivity(intent);
+
+                            }
+
+                            catch (NumberFormatException e) {
+                                Toast.makeText(getApplicationContext(), "Invalide No", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Update",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
 
     }
 
-
-    public void gotocomplete (View view){
-        Context context = getApplicationContext();
-        CharSequence message = "Your Details Updated";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, message, duration);
-        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER,0,100);
-        toast.show();
-
-        Intent intent = new Intent(this,OrderComplete.class);
-        startActivity(intent);
-    }
-
-    public void gotoback (View view){
-
-        Intent intent = new Intent(this,OrderComplete.class);
-        startActivity(intent);
-    }
 }
