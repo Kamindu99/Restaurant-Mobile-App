@@ -9,17 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RestaurantMobileApp">
-        <activity android:name=".BookingAll"
-            android:parentActivityName=".TableList"/>
-
-        <activity android:name=".ViewBooking"
-            android:parentActivityName=".BookingAll"/>
-
-        <activity android:name=".EditBooking"
-            android:parentActivityName=".BookingAll"/>
-
-        <activity android:name=".AddBooking"
-            android:parentActivityName=".TableList"/>
+        <activity android:name=".AllInquiry" android:parentActivityName=".MainActivity" />
+        <activity android:name=".EditInquiry" android:parentActivityName=".AllInquiry" />
+        <activity android:name=".AddInquiry" android:parentActivityName=".AllInquiry" />
+        <activity
+            android:name=".BookingAll"
+            android:parentActivityName=".TableList" />
+        <activity
+            android:name=".ViewBooking"
+            android:parentActivityName=".BookingAll" />
+        <activity
+            android:name=".EditBooking"
+            android:parentActivityName=".BookingAll" />
+        <activity
+            android:name=".AddBooking"
+            android:parentActivityName=".TableList" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/Theme.RestaurantMobileApp.NoActionBar">

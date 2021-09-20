@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 else  if(id ==R.id.nav_contactus){
                     Toast.makeText(getApplicationContext(), "This is ContactUs Page", Toast.LENGTH_LONG).show();
                     drawerLayout.closeDrawer(GravityCompat.START);
-                    startActivity( new Intent(MainActivity.this,AboutUs.class));
+                    startActivity( new Intent(MainActivity.this,AllInquiry.class));
                 }
                 else  if(id ==R.id.nav_aboutus){
                     Toast.makeText(getApplicationContext(), "This is AboutUs Page", Toast.LENGTH_LONG).show();
