@@ -28,7 +28,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:text="xxxxxxx"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/name1"
         app:layout_constraintStart_toEndOf="@+id/name1" />
@@ -40,7 +39,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
-        android:text="@string/id_card"
+        android:text="Mobile No"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +52,6 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
-        android:text="xxxxxxx"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/type"
         app:layout_constraintTop_toBottomOf="@+id/tv_name" />
@@ -79,7 +77,6 @@
         android:layout_height="20dp"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:text="xxxxx"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/amount"
         app:layout_constraintStart_toEndOf="@+id/amount" />
@@ -103,7 +100,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:text="xxxxx"
         android:textSize="20sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/number"
         app:layout_constraintStart_toEndOf="@+id/number" />
@@ -115,7 +111,6 @@
         android:layout_marginStart="35dp"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="32dp"
-        android:text="xxxx"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/number" />
@@ -127,9 +122,22 @@
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
         android:layout_marginTop="32dp"
-        android:text="xxxxx"
         android:textSize="20sp"
         app:layout_constraintStart_toEndOf="@+id/tv_date"
         app:layout_constraintTop_toBottomOf="@+id/tv_number" />
+
+    <Button
+        android:id="@+id/btnview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="141dp"
+        android:layout_marginLeft="141dp"
+        android:layout_marginTop="68dp"
+
+        android:onClick="gotopaymentcmplete"
+        android:text="Back"
+        app:backgroundTint="@color/btn_footer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_cvv" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

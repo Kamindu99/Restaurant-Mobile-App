@@ -56,6 +56,7 @@
     <string name="ed_date">mm/yy</string>
     <string name="ed_valid">CVV</string>
     <string name="Id_btnpay">Pay</string>
+    <string name="ed_mobileno">Enter Moble No</string>
 
 
     <string name="id_food">Food Name</string>
