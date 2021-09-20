@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OrderComplete">
+
+
+    <Button
+        android:id="@+id/btn_home"
+        android:layout_width="149dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:onClick="gotomenu"
+        android:text="@string/btn_menu"
+        android:textStyle="bold"
+        app:backgroundTint="@color/btn_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_orderedit" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="63dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/right" />
+
+    <TextView
+        android:id="@+id/tv_odercmpled"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="84dp"
+        android:alpha="0.8"
+        android:text="@string/tv_odercmplted"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_thankyou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="4dp"
+        android:text="@string/tv_thankyou"
+        app:layout_constraintStart_toEndOf="@+id/imageView5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_odercmpled" />
+
+    <Button
+        android:id="@+id/btn_orderedit2"
+        android:layout_width="217dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="80dp"
+        android:onClick="gotoview"
+        android:text="View Order Details"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/btn_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_thankyou" />
+
+    <Button
+        android:id="@+id/btn_orderedit"
+        android:layout_width="217dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        android:onClick="gotoedit"
+        android:text="@string/btn_orderedit"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/btn_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_orderedit2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
