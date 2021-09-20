@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderComplete">
+    tools:context=".OrderComplete"
+    android:background="@drawable/odercom">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="#53614e"
+        android:alpha="0.5">
+
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btn_home"
@@ -22,11 +33,11 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="63dp"
-        android:layout_height="63dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="84dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="34dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/right" />
@@ -37,11 +48,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginLeft="12dp"
-        android:layout_marginTop="84dp"
-        android:alpha="0.8"
+        android:layout_marginTop="44dp"
         android:text="@string/tv_odercmplted"
-        android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textColor="@color/white"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />

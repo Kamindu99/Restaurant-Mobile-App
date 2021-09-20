@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ViewOrder extends AppCompatActivity {
 
-    TextView name,phone,address1,address2,address3,email;
+    TextView name,phone,address1,address2,address3,email,headname;
     Button btnBack;
     Delivery delivery;
     String id;
@@ -36,6 +37,7 @@ public class ViewOrder extends AppCompatActivity {
         address2=findViewById(R.id.tv_disAddress2);
         address3=findViewById(R.id.tv_disAddress3);
         email=findViewById(R.id.tv_disEmail);
+        headname=findViewById(R.id.headname);
 
         btnBack=findViewById(R.id.btn_viewBack);
         delivery=new Delivery();
@@ -58,6 +60,7 @@ public class ViewOrder extends AppCompatActivity {
                     address2.setText(snapshot.child("address2").getValue().toString());
                     address3.setText(snapshot.child("address3").getValue().toString());
                     email.setText(snapshot.child("email").getValue().toString());
+                    headname.setText(snapshot.child("name").getValue().toString());
                 }
                 else
                     Toast.makeText(getApplicationContext(),"No sourse to Display",Toast.LENGTH_SHORT).show();
@@ -67,6 +70,14 @@ public class ViewOrder extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ViewOrder.this,OrderComplete.class);
+                startActivity(intent);
             }
         });
 

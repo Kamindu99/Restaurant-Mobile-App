@@ -1,166 +1,207 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ViewOrder">
-
-    <View
-        android:id="@+id/view11"
-        android:layout_width="363dp"
-        android:layout_height="278dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="25dp"
-        android:alpha="0.08"
-        android:background="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#61ba79"
+        android:orientation="vertical">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hi"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="30dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/headname"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:text="Customer Name"
+            />
     <TextView
-        android:id="@+id/tv_viewname5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="100dp"
-        android:text="@string/tv_email"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_viewname7" />
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:text="!"
+        />
+</LinearLayout>
 
-    <TextView
-        android:id="@+id/tv_disEmail"
-        android:layout_width="240dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="28dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toEndOf="@+id/tv_viewname5"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disAddress3" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:text="This is Your Order Details.If You want to Edit your Order Details You can edit it whithin 5minits"
+            />
 
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/view_background">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="30dp">
     <TextView
-        android:id="@+id/tv_viewname6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
         android:text="@string/tv_name"
-        android:textColor="@color/black"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toTopOf="@+id/view11" />
+        android:textColor="@color/white"/>
 
     <TextView
         android:id="@+id/tv_disName"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="22dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_viewname6"
-        app:layout_constraintTop_toTopOf="@+id/view11" />
-
-    <TextView
-        android:id="@+id/tv_disAddress1"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="12dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disPhone" />
-
-    <TextView
-        android:id="@+id/tv_viewname7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tv_address"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_viewname" />
-
-    <TextView
-        android:id="@+id/tv_disAddress2"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disAddress1" />
-
-    <TextView
-        android:id="@+id/tv_disAddress3"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/view11"
-        app:layout_constraintHorizontal_bias="0.658"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disAddress2" />
-
-    <TextView
-        android:id="@+id/tv_viewname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:text="@string/tv_phone"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/view11"
-        app:layout_constraintTop_toBottomOf="@+id/tv_viewname6" />
-
-    <TextView
-        android:id="@+id/tv_disPhone"
-        android:layout_width="126dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="20dp"
-        android:textSize="16sp"
-        app:layout_constraintStart_toEndOf="@+id/tv_viewname"
-        app:layout_constraintTop_toBottomOf="@+id/tv_disName" />
-
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
+        android:textSize="20sp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="211dp"
-        android:layout_marginRight="211dp"
-        android:alpha="0.7"
-        android:text="My Order Details"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white"
+        android:text="Customer Name"/>
+</LinearLayout>
 
-    <Button
-        android:id="@+id/btn_viewBack"
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_phone"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_disPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="0715273881"/>
+    </LinearLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_address"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/as"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_disAddress1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_toRightOf="@id/as"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="2nd post"/>
+        <TextView
+            android:id="@+id/tv_disAddress2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/as"
+            android:layout_below="@id/tv_disAddress1"
+            android:textColor="@color/white"
+            android:text="2nd post"/>
+
+        <TextView
+            android:id="@+id/tv_disAddress3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/as"
+            android:layout_below="@id/tv_disAddress2"
+            android:textColor="@color/white"
+            android:text="2nd post"/>
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tv_email"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/tv_disEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/white"
+            android:text="kamindu@gmail.com"/>
+    </LinearLayout>
+
+</LinearLayout>
+</LinearLayout>
+    <Button
+        android:id="@+id/btn_viewBack"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
         android:text="Back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="20dp" />
+</RelativeLayout>

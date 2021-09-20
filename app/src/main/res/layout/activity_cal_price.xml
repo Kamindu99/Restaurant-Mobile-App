@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".CalPrice">
+    tools:context=".CalPrice"
+    android:background="@drawable/detailsimg">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/detailsimgs">
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="20dp"
+        android:id="@+id/food_detail_name"
+        android:text="Food Name"
+        android:textColor="@color/white"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        android:textSize="30dp"/>
+
 
     <ImageView
         android:layout_width="match_parent"
@@ -14,35 +36,45 @@
         android:id="@+id/food_detail_img"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/food_detail_name"/>
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/food_detail_img"
+    android:id="@+id/lay_cal_1"
+    android:gravity="center"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/food_detail_name"
-        android:text="Food Name"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textStyle="bold"
-        android:textSize="20dp"/>
-
+        android:id="@+id/rs"
+        android:text="Rs."
+        android:textColor="@color/black"
+        android:gravity="center"
+        android:textSize="25dp"/>
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/food_detail_price"
+        android:layout_toRightOf="@+id/rs"
         android:text="@string/foodpricehome"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginLeft="50dp"
-        android:textSize="15dp"/>
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
+        android:textSize="25dp"/>
+
+</LinearLayout>
 
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:orientation="horizontal">
+       android:orientation="horizontal"
+       android:id="@+id/lay_cal_2"
+       android:layout_below="@+id/lay_cal_1">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Quntity"
         android:layout_marginTop="20dp"
@@ -69,10 +101,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:textColor="@color/white"
+        android:layout_alignBottom="@+id/food_detail_btn"
+        android:layout_marginBottom="70dp">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Total Price"
             android:layout_marginTop="20dp"
@@ -80,13 +115,14 @@
             android:layout_marginLeft="50dp"
             android:textSize="15dp"/>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/total"
             android:layout_marginTop="20dp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
-            android:textSize="15dp"/>
+            android:textSize="15dp"
+            android:text="0000"/>
 
     </LinearLayout>
 
@@ -95,13 +131,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="20dp"
         android:layout_marginRight="50dp"
+        android:layout_marginBottom="30dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:onClick="gotopayment"
         android:text="Continue to Pay"
-        android:textAllCaps="false"
-        android:textSize="20dp"
+        android:layout_alignParentBottom="true"
+        android:textSize="15dp"
         android:textStyle="bold" />
 
-</LinearLayout>
+</RelativeLayout>

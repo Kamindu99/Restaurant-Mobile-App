@@ -75,17 +75,13 @@ public class DeliveryOrder extends AppCompatActivity {
             public void onClick(View view) {
                 try{
                     if (TextUtils.isEmpty(name.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Name",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Name is Required !",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(phone.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Phone",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Phone Number is Required !",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(address1.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Address1",Toast.LENGTH_SHORT).show();
-                    else if(TextUtils.isEmpty(address2.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Address2",Toast.LENGTH_SHORT).show();
-                    else if(TextUtils.isEmpty(address3.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Address3",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Address is Required !",Toast.LENGTH_SHORT).show();
                     else if(TextUtils.isEmpty(email.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Email",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"Email is Required !",Toast.LENGTH_SHORT).show();
 
                     else{
                         delivery.setName(name.getText().toString().trim());
@@ -98,7 +94,7 @@ public class DeliveryOrder extends AppCompatActivity {
                         //dbRef.push().setValue(std);
                         // dbRef.child(txtID.getText().toString().trim()).setValue(std);
 
-                        String id="Del"+(maxID+1);
+                        String id="Delivery_0"+(maxID+1);
                         dbRef.child(String.valueOf(id)).setValue(delivery);
                         Toast.makeText(getApplicationContext(),"Successfull Added! You Can Edit Your Details within 5Min! ",Toast.LENGTH_SHORT).show();
 

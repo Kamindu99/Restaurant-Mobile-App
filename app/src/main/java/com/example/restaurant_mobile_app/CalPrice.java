@@ -7,9 +7,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -20,6 +22,7 @@ public class CalPrice extends AppCompatActivity {
     ImageView foodImg;
     TextView foodName,foodprice,total;
     EditText quntity;
+    Button GoPayment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class CalPrice extends AppCompatActivity {
         foodprice=findViewById(R.id.food_detail_price);
         total=findViewById(R.id.total);
         quntity=findViewById(R.id.inputquntity);
+        GoPayment=findViewById(R.id.food_detail_btn);
 
         foodImg.setImageResource(getIntent().getExtras().getInt("Image_id"));
         foodName.setText(getIntent().getExtras().getString("food_name"));
@@ -63,24 +67,29 @@ public class CalPrice extends AppCompatActivity {
 
         foodprice.addTextChangedListener(textWatcher);
         quntity.addTextChangedListener(textWatcher);
-    }
 
-    public void gotopayment (View view) {
-        Context context = getApplicationContext();
-        CharSequence message = "Pay total price";
-        int duration = Toast.LENGTH_SHORT;
-        Toast toast = Toast.makeText(context, message, duration);
-        toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 100);
-        toast.show();
+        GoPayment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        Intent intent = new Intent(CalPrice.this, Payment.class);
+                Context context = getApplicationContext();
+                CharSequence message = "Pay total price";
+                int duration = Toast.LENGTH_SHORT;
+                Toast toast = Toast.makeText(context, message, duration);
+                toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 100);
+                toast.show();
 
-        TextView textView=(TextView)findViewById(R.id.total);
+                Intent intent = new Intent(CalPrice.this, Payment.class);
 
-        String totalp= textView.getText().toString();
-        intent.putExtra("total",totalp);
-        startActivity(intent);
+                TextView textView=(TextView)findViewById(R.id.total);
 
+                String totalp= textView.getText().toString();
+                intent.putExtra("total",totalp);
+                startActivity(intent);
+                }
+
+
+        });
     }
 
     }
