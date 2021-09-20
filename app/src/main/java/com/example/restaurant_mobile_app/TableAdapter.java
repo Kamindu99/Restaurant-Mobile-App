@@ -45,7 +45,7 @@ public class TableAdapter extends RecyclerView.Adapter<TableAdapter.TableViewHol
         holder.booknow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(context.getApplicationContext(),AboutUs.class);
+                Intent intent=new Intent(context.getApplicationContext(),AddBooking.class);
                 intent.putExtra("Image_id",table_List.get(position).Image_id);
                 intent.putExtra("table_name",table_List.get(position).name);
                 intent.putExtra("table_price",table_List.get(position).price);

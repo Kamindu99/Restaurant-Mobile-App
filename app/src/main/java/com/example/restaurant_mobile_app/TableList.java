@@ -5,6 +5,9 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.view.Menu;
+import android.view.MenuItem;
+
 import android.os.Bundle;
 
 import java.util.ArrayList;
@@ -42,5 +45,10 @@ public class TableList extends AppCompatActivity {
         TableAdapter adapter=new TableAdapter(tableList,this);
         recyclerView2.setAdapter(adapter);
 
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.pre_book, menu);
+        return true;
     }
 }
