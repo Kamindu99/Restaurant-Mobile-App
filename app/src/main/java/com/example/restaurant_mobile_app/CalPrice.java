@@ -20,9 +20,9 @@ import android.widget.Toast;
 
 public class CalPrice extends AppCompatActivity {
     ImageView foodImg;
-    TextView foodName,foodprice,total;
-    EditText quntity;
+    TextView foodName,foodprice,total,value;
     Button GoPayment;
+    int count =1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,16 +32,19 @@ public class CalPrice extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
         foodImg=findViewById(R.id.food_detail_img);
         foodName=findViewById(R.id.food_detail_name);
         foodprice=findViewById(R.id.food_detail_price);
         total=findViewById(R.id.total);
-        quntity=findViewById(R.id.inputquntity);
+        value=findViewById(R.id.value);
+
         GoPayment=findViewById(R.id.food_detail_btn);
 
         foodImg.setImageResource(getIntent().getExtras().getInt("Image_id"));
         foodName.setText(getIntent().getExtras().getString("food_name"));
         foodprice.setText(getIntent().getExtras().getString("food_price"));
+
 
         TextWatcher textWatcher=new TextWatcher() {
             @Override
@@ -51,10 +54,10 @@ public class CalPrice extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                if(!foodprice.getText().toString().equals("") &&!quntity.getText().toString().equals(""))
+                if(!foodprice.getText().toString().equals("") &&!value.getText().toString().equals(""))
                 {
                     int temp1 = Integer.parseInt(foodprice.getText().toString());
-                    int temp2 = Integer.parseInt(quntity.getText().toString());
+                    int temp2 = Integer.parseInt(value.getText().toString());
                     total.setText(String.valueOf(temp1*temp2));
                 }
             }
@@ -66,7 +69,7 @@ public class CalPrice extends AppCompatActivity {
         };
 
         foodprice.addTextChangedListener(textWatcher);
-        quntity.addTextChangedListener(textWatcher);
+        value.addTextChangedListener(textWatcher);
 
         GoPayment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,6 +93,16 @@ public class CalPrice extends AppCompatActivity {
 
 
         });
+    }
+
+    public void increment(View view){
+        count++;
+        value.setText(""+ count);
+    }
+    public void decrement(View view){
+        if(count<=1) count=1;
+        else count--;
+        value.setText(""+count);
     }
 
     }
