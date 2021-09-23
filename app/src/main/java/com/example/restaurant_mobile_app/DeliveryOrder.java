@@ -11,6 +11,8 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -26,6 +28,8 @@ public class DeliveryOrder extends AppCompatActivity {
     private DatabaseReference dbRef;
     Delivery delivery;
     long maxID;
+    TextView fname;
+    ImageView fImg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,12 @@ public class DeliveryOrder extends AppCompatActivity {
         address2=findViewById(R.id.edtxt_address2);
         address3=findViewById(R.id.edtxt_address3);
         email=findViewById(R.id.edtxt_email);
+        fname=findViewById(R.id.tv_foodNameD);
+        fImg=findViewById(R.id.img_fImg);
+
+        String ffname =getIntent().getBundleExtra("ABC").getString("foodname");
+        fname.setText("You Order "+ffname);
+        fImg.setImageResource(getIntent().getBundleExtra("ABC").getInt("foodImg"));
 
         btnsave=findViewById(R.id.btn_deliveryCnfrm);
 

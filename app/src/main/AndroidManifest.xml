@@ -72,6 +72,7 @@
         <activity
             android:name=".AddBooking"
             android:parentActivityName=".TableList" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -6,6 +6,60 @@
     android:layout_height="match_parent"
     tools:context=".DeliveryOrder">
 
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/img_fImg"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/biriyani" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/deliv">
+
+
+            <TextView
+                android:id="@+id/tv_foodNameD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="140dp"
+                android:layout_marginTop="10dp"
+                android:text="TextView"
+                android:textSize="24sp"
+                tools:layout_editor_absoluteX="111dp"
+                tools:layout_editor_absoluteY="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_foodNameD"
+                android:layout_marginRight="10dp"
+                android:text="You Can Get Deliver with in 5km and we will suport you tovgx gf this ts."
+                android:textSize="14sp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="140dp"
+                tools:layout_editor_absoluteX="111dp"
+                tools:layout_editor_absoluteY="18dp" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/relativeLayout2"/>
+
+
     <Button
         android:id="@+id/btn_deliveryCnfrm"
         android:layout_width="match_parent"
@@ -34,15 +88,18 @@
 
     <EditText
         android:id="@+id/edtxt_name"
-        android:layout_width="217dp"
-        android:layout_height="0dp"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="22dp"
         android:ems="10"
+        android:background="@drawable/custom_input"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Customer Name"
         android:inputType="textPersonName"
-        app:layout_constraintStart_toEndOf="@+id/tv_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/tv_name"
+        app:layout_constraintStart_toEndOf="@+id/tv_name" />
 
     <View
         android:id="@+id/view10"
@@ -127,6 +184,10 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="28dp"
         android:ems="10"
+        android:background="@drawable/custom_input"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Phone Number"
         android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/tv_phone"
         app:layout_constraintTop_toBottomOf="@+id/edtxt_name" />
@@ -148,6 +209,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:ems="10"
+        android:background="@drawable/custom_input"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:hint="Enter Address"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.782"
@@ -200,6 +265,9 @@
         android:layout_marginRight="40dp"
         android:ems="10"
         android:hint="@string/edtxt_email"
+        android:background="@drawable/custom_input"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -212,10 +280,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:text="@string/tv_name"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

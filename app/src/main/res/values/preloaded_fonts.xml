@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/atomic_age</item>
         <item>@font/bangers</item>
+        <item>@font/eagle_lake</item>
+        <item>@font/eater</item>
+        <item>@font/im_fell_french_canon_sc</item>
+        <item>@font/miltonian_tattoo</item>
+        <item>@font/ruslan_display</item>
     </array>
 </resources>

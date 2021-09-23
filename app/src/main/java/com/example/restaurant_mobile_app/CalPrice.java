@@ -88,6 +88,8 @@ public class CalPrice extends AppCompatActivity {
 
                 String totalp= textView.getText().toString();
                 intent.putExtra("total",totalp);
+                intent.putExtra("fname",getIntent().getExtras().getString("food_name"));
+                intent.putExtra("fImg",getIntent().getExtras().getInt("Image_id"));
                 startActivity(intent);
                 }
 
