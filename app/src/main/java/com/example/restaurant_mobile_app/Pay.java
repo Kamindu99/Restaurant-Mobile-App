@@ -4,7 +4,7 @@ public class Pay {
     private String name;
     private Integer mobileno;
     private String amount;
-    private Integer cardno;
+    private Long cardno;
     private String date;
     private Integer cvv;
 
@@ -32,11 +32,11 @@ public class Pay {
         this.amount = amount;
     }
 
-    public Integer getCardno() {
+    public Long getCardno() {
         return cardno;
     }
 
-    public void setCardno(Integer cardno) {
+    public void setCardno(Long cardno) {
         this.cardno = cardno;
     }
 

@@ -198,10 +198,20 @@
 </LinearLayout>
     <Button
         android:id="@+id/btn_viewBack"
-        android:layout_width="150dp"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="Edit Details"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="30dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        android:id="@+id/btn_canclorder"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel Delivery"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginRight="10dp" />
 </RelativeLayout>

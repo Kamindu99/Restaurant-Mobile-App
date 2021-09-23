@@ -42,6 +42,7 @@
               android:textColor="@color/black"
               android:textSize="20sp"
               tools:text="Payment Successful" />
+
     <TextView
         android:id="@+id/id_message2"
         android:layout_width="wrap_content"
@@ -51,20 +52,21 @@
         android:text="@string/id_message"
         android:textColor="@color/black"
         android:textSize="14sp"
-        tools:text="Thank you Payment with us" />
+        tools:text="Thank you for your Payment " />
 </LinearLayout>
 
       </LinearLayout>
 
       <Button
           android:id="@+id/btnsee"
-          android:layout_width="wrap_content"
+          android:layout_width="match_parent"
           android:layout_height="wrap_content"
           android:onClick="gotoView"
           android:text="@string/btnsee"
           app:backgroundTint="@color/btn_footer"
           android:layout_marginTop="20pt"
-          android:layout_marginLeft="65pt"/>
+          android:layout_marginLeft="50pt"
+          android:layout_marginRight="50pt"/>
 
 
     <TextView
@@ -81,25 +83,25 @@
 
     <Button
         android:id="@+id/btndeliver"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="5pt"
-        android:layout_marginLeft="62pt"
+        android:layout_marginLeft="50pt"
         android:onClick="gotoDelivery"
         android:text="@string/btndeliver"
         app:backgroundTint="@color/btn_footer"
-     />
+        android:layout_marginRight="50pt"/>
 
     <Button
         android:id="@+id/btnhome"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50pt"
-        android:layout_marginLeft="80pt"
+        android:layout_marginLeft="60pt"
         android:onClick="gotoHome"
         android:text="@string/btnhome"
         app:backgroundTint="@color/btn_footer"
-       />
+        android:layout_marginRight="60pt"/>
 
   </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

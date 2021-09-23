@@ -23,13 +23,12 @@
         android:layout_width="149dp"
         android:layout_height="50dp"
         android:layout_marginTop="32dp"
-        android:onClick="gotomenu"
         android:text="@string/btn_menu"
         android:textStyle="bold"
         app:backgroundTint="@color/btn_footer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_orderedit" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_orderview" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -68,11 +67,10 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_odercmpled" />
 
     <Button
-        android:id="@+id/btn_orderedit2"
+        android:id="@+id/btn_orderview"
         android:layout_width="217dp"
         android:layout_height="54dp"
         android:layout_marginTop="80dp"
-        android:onClick="gotoview"
         android:text="View Order Details"
         android:textSize="14sp"
         android:textStyle="bold"
@@ -81,18 +79,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_thankyou" />
 
-    <Button
-        android:id="@+id/btn_orderedit"
-        android:layout_width="217dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="32dp"
-        android:onClick="gotoedit"
-        android:text="@string/btn_orderedit"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/btn_footer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_orderedit2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

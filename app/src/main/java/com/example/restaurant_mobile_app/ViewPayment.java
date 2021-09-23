@@ -24,6 +24,7 @@ public class ViewPayment extends AppCompatActivity {
     TextView tv_date;
     TextView tv_cvv;
     Button btnview;
+    Button btndelete;
     DatabaseReference dbRef;
     Pay pay;
     String id;
@@ -42,23 +43,24 @@ public class ViewPayment extends AppCompatActivity {
         tv_date = findViewById(R.id.tv_date);
         tv_cvv = findViewById(R.id.tv_cvv);
         btnview = findViewById(R.id.btnview);
+        btndelete = findViewById(R.id.btndelete);
 
         pay = new Pay();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent receve = getIntent();
-        Bundle page1= receve.getBundleExtra("ABC");
+        Bundle page1 = receve.getBundleExtra("ABC");
         String msgzg = page1.getString("Extra");
 
-        id=msgzg;
+        id = msgzg;
 
 
         dbRef = FirebaseDatabase.getInstance("https://restaurant-mobile-app-26aef-default-rtdb.firebaseio.com/").getReference().child("Payment").child(id);
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
-                if(snapshot.hasChildren()){
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.hasChildren()) {
                     tv_name.setText(snapshot.child("name").getValue().toString());
                     tv_type.setText(snapshot.child("mobileno").getValue().toString());
                     tv_amount.setText(snapshot.child("amount").getValue().toString());
@@ -66,18 +68,47 @@ public class ViewPayment extends AppCompatActivity {
                     tv_date.setText(snapshot.child("date").getValue().toString());
                     tv_cvv.setText(snapshot.child("cvv").getValue().toString());
 
-                }
-                else
+                } else
                     Toast.makeText(getApplicationContext(), "No payment to display", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
-            public void onCancelled(@NonNull  DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
+        btndelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("Payment");
+                upRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild(id)) {
+                            DatabaseReference deleteRef = FirebaseDatabase.getInstance().getReference().child("Payment").child(id);
+                            deleteRef.removeValue();
+                            Toast.makeText(getApplicationContext(), "Refund Successfull", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ViewPayment.this, MainActivity.class);
+                            startActivity(intent);
+                        } else
+                            Toast.makeText(getApplicationContext(), "No sourse to Cancel", Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
 
             }
         });
     }
+
+
 
     public void gotopaymentcmplete(View view){
         Intent intent = new Intent(this, PaymentComplete.class);

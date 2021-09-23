@@ -111,22 +111,6 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public boolean onNavigationItemSelected(MenuItem item){
-        int id =item.getItemId();
-        if (id==R.id.nav_home){
-            startActivity( new Intent(MainActivity.this,AboutUs.class));
-        }
-        else  if(id ==R.id.nav_aboutus){
-
-        }
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    public void gototablebook (View view){
-        Intent intent = new Intent(this,TableList.class);
-        startActivity(intent);
-    }
     public void gotoabout (View view){
         Intent intent = new Intent(this,AboutUs.class);
         startActivity(intent);
