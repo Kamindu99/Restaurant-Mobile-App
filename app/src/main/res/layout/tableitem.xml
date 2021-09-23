@@ -2,21 +2,22 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="160dp"
+    android:layout_width="165dp"
     android:layout_height="220dp"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="10dp"
+    android:layout_marginLeft="15dp"
+
     android:layout_marginTop="10dp"
-    app:cardCornerRadius="10dp">
+    android:layout_marginBottom="5dp"
+    app:cardCornerRadius="15dp">
 
 
     <RelativeLayout
-        android:layout_width="160dp"
+        android:layout_width="165dp"
         android:layout_height="220dp"
         android:id="@+id/table_layout_id">
 
         <ImageView
-            android:layout_width="160dp"
+            android:layout_width="165dp"
             android:layout_height="110dp"
             android:id="@+id/tableImg"
             android:src="@drawable/table1"/>
@@ -43,9 +44,10 @@
         <Button
             android:id="@+id/booknow"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
             android:layout_below="@+id/tableprice"
             android:layout_marginRight="10dp"
+            android:background="@drawable/btndec"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"

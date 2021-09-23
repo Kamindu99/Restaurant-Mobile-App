@@ -120,7 +120,7 @@ public class Payment extends AppCompatActivity {
                         //dbRef.push().setValue(pay);
                         String id="Payment_"+(payID+1);
                         dbRef.child(String.valueOf(id)).setValue(pay);
-                        Toast.makeText(getApplicationContext(),"Success", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(),"paying", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(Payment.this, PaymentComplete.class);
                         String mzge= id;

@@ -34,10 +34,12 @@ public class InquiryAdapter extends ArrayAdapter<Inquiry> {
         View row = inflater.inflate(resource,parent,false);
 
         TextView title = row.findViewById(R.id.subject);
+        TextView desc = row.findViewById(R.id.des);
 
         // todos [obj1,obj2,obj3]
         Inquiry inquiry = inquiries.get(position);
         title.setText(inquiry.getSubject());
+        desc.setText(inquiry.getContent());
 
 
         return row;

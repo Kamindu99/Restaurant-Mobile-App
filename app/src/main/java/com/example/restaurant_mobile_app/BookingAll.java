@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BookingAll extends AppCompatActivity {
-    private Button add;
+
     private ListView listView;
     Context context;
     private List<Booking> bookings;
@@ -35,7 +35,7 @@ public class BookingAll extends AppCompatActivity {
         context = this;
 
         dbHandler = new DbHandler(context);
-        add = findViewById(R.id.add);
+
         listView = findViewById(R.id.inquirylist);
 
 
@@ -45,12 +45,7 @@ public class BookingAll extends AppCompatActivity {
         BookingAdapter adapter = new BookingAdapter(context,R.layout.single_booking,bookings);
         listView.setAdapter(adapter);
 
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(context,AddBooking.class));
-            }
-        });
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
