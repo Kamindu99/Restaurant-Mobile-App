@@ -83,15 +83,15 @@ public class TableList extends AppCompatActivity {
         recyclerView2.setHasFixedSize(true);
 
         tableList=new ArrayList<>();
-        tableList.add(new TableModel(R.drawable.table1,"2 Chair Table","500"));
-        tableList.add(new TableModel(R.drawable.table2,"3 Chair Table","700"));
-        tableList.add(new TableModel(R.drawable.table3,"4 Chair Table","800"));
-        tableList.add(new TableModel(R.drawable.table4,"5 Chair Table","1000"));
-        tableList.add(new TableModel(R.drawable.table1,"6 Chair Table","1200"));
-        tableList.add(new TableModel(R.drawable.table2,"Family Table","1500"));
-        tableList.add(new TableModel(R.drawable.table3,"Drinking Table","2000"));
-        tableList.add(new TableModel(R.drawable.table4,"Birthday Table","2500"));
-        tableList.add(new TableModel(R.drawable.table1,"Cuple Table","800"));
+        tableList.add(new TableModel(R.drawable.tablet,"2 Chair Table","Rs.200"));
+        tableList.add(new TableModel(R.drawable.table3,"3 Chair Table","Rs.200"));
+        tableList.add(new TableModel(R.drawable.table4,"4 Chair Table","Rs.200"));
+        tableList.add(new TableModel(R.drawable.table5,"5 Chair Table","Rs.300"));
+        tableList.add(new TableModel(R.drawable.table6,"6 Chair Table","Rs.300"));
+        tableList.add(new TableModel(R.drawable.tablefam,"Family Table","Rs.400"));
+        tableList.add(new TableModel(R.drawable.drinktable,"Drinking Table","Rs.400"));
+        tableList.add(new TableModel(R.drawable.bdaytable,"Birthday Table","Rs.500"));
+        tableList.add(new TableModel(R.drawable.tablegreen,"Green Room","Rs.1000"));
 
         TableAdapter adapter=new TableAdapter(tableList,this);
         recyclerView2.setAdapter(adapter);

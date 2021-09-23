@@ -11,6 +11,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class ViewBooking extends AppCompatActivity {
 
@@ -20,6 +21,7 @@ public class ViewBooking extends AppCompatActivity {
 
     private DbHandler dbHandler;
     private Context context;
+    private TextView tbname;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class ViewBooking extends AppCompatActivity {
         nic = findViewById(R.id.view_nic);
         date = findViewById(R.id.view_date);
         time = findViewById(R.id.view_time);
+        tbname = findViewById(R.id.table_view_detail_name);
 
 
         final String id = getIntent().getStringExtra("id");
@@ -47,6 +50,7 @@ public class ViewBooking extends AppCompatActivity {
         nic.setText(tbooking.getNic());
         date.setText(tbooking.getDate());
         time.setText(tbooking.getTime());
+        tbname.setText(tbooking.getTname());
 
 
 
