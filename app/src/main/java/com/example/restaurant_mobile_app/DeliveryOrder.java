@@ -23,19 +23,9 @@ public class DeliveryOrder extends AppCompatActivity {
 
     EditText name,phone,address1,address2,address3,email;
     Button btnsave;
-    DatabaseReference dbRef;
+    private DatabaseReference dbRef;
     Delivery delivery;
     long maxID;
-
-    private  void clearControls(){
-        name.setText("");
-        phone.setText("");
-        address1.setText("");
-        address2.setText("");
-        address3.setText("");
-        email.setText("");
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

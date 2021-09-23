@@ -29,24 +29,9 @@ public class Payment extends AppCompatActivity {
     EditText ed_date;
     EditText ed_valid;
     Button id_btnpay;
-    DatabaseReference dbRef;
+    private DatabaseReference dbRef;
     Pay pay;
-    long maxID;
-
-    private void clearControls(){
-        ed_name.setText("");
-        ed_mobileno.setText("");
-        tv_payprice.setText("");
-        ed_no.setText("");
-        ed_date.setText("");
-        ed_valid.setText("");
-
-
-    }
-
-
-
-
+    long payID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,12 +50,12 @@ public class Payment extends AppCompatActivity {
         id_btnpay = findViewById(R.id.id_btnpay);
 
         pay = new Pay();
-        dbRef = FirebaseDatabase.getInstance("https://restaurant-mobile-app-26aef-default-rtdb.firebaseio.com/").getReference().child("Payment");
+        dbRef= FirebaseDatabase.getInstance().getReference().child("Payment");
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if(snapshot.exists())
-                    maxID=(snapshot.getChildrenCount());
+                    payID=(snapshot.getChildrenCount());
             }
 
             @Override
@@ -97,8 +82,6 @@ public class Payment extends AppCompatActivity {
                         ed_mobileno.requestFocus();
                     }
 
-
-
                     else if(TextUtils.isEmpty(tv_payprice.getText().toString()))
                         Toast.makeText(getApplicationContext(), "Price", Toast.LENGTH_SHORT).show();
 
@@ -110,9 +93,6 @@ public class Payment extends AppCompatActivity {
                         ed_no.setError("Card no must have 12 digits!");
                         ed_no.requestFocus();
                     }
-
-
-
 
                     else if (TextUtils.isEmpty(ed_date.getText().toString())){
                         ed_date.setError("Date Can't be Empty !");
@@ -142,7 +122,7 @@ public class Payment extends AppCompatActivity {
                         pay.setCvv(Integer.parseInt(ed_valid.getText().toString().trim()));
 
                         //dbRef.push().setValue(pay);
-                        String id="Pay"+(maxID+1);
+                        String id="Payment_"+(payID+1);
                         dbRef.child(String.valueOf(id)).setValue(pay);
                         Toast.makeText(getApplicationContext(),"Success", Toast.LENGTH_SHORT).show();
 
