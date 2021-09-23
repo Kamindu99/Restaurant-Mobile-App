@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class OrderComplete extends AppCompatActivity {
+
+    Button viewordr,home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,29 +18,30 @@ public class OrderComplete extends AppCompatActivity {
         setTitle("Order Confirmation");
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        viewordr=findViewById(R.id.btn_orderview);
+        home=findViewById(R.id.btn_home);
+
+        viewordr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String id = getIntent().getStringExtra("id");
+                Intent intent = new Intent(OrderComplete.this,ViewOrder.class);
+                intent.putExtra("id",id);
+                startActivity(intent);
+            }
+        });
+
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OrderComplete.this,MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
-
-
-    public void gotoedit (View view){
-        Intent intent2= getIntent();
-        Bundle bundle=intent2.getExtras();
-        Intent intent = new Intent(this,EditDelivery.class);
-        intent.putExtra("ABC",bundle);
-        startActivity(intent);
-    }
-
-    public void gotomenu (View view){
-        Intent intent = new Intent(this,MainActivity.class);
-        startActivity(intent);
-    }
-    public void gotoview (View view){
-        Intent intent2= getIntent();
-        Bundle bundle=intent2.getExtras();
-        Intent intent = new Intent(this,ViewOrder.class);
-        intent.putExtra("ABC",bundle);
-        startActivity(intent);
-    }
-
-
 
 }

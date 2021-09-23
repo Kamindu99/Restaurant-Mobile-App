@@ -74,18 +74,33 @@ public class DeliveryOrder extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    if (TextUtils.isEmpty(name.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Name is Required !",Toast.LENGTH_SHORT).show();
+                    if (TextUtils.isEmpty(name.getText().toString())){
+                        name.setError("Name Can't be Empty !");
+                    name.requestFocus();
+                    }
                     else if(TextUtils.isEmpty(phone.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Phone Number is Required !",Toast.LENGTH_SHORT).show();
+                    {
+                        phone.setError("Phone Can't be Empty !");
+                        phone.requestFocus();
+                    }
+                    else if (TextUtils.getTrimmedLength(phone.getText()) != 10){
+                        phone.setError("Mobile number should have 10 digits !");
+                        phone.requestFocus();
+                    }
                     else if(TextUtils.isEmpty(address1.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Address is Required !",Toast.LENGTH_SHORT).show();
+                    {
+                        address1.setError("Address Can't be Empty !");
+                        address1.requestFocus();
+                    }
                     else if(TextUtils.isEmpty(email.getText().toString()))
-                        Toast.makeText(getApplicationContext(),"Email is Required !",Toast.LENGTH_SHORT).show();
+                    {
+                        email.setError("Email Can't be Empty !");
+                        email.requestFocus();
+                    }
 
                     else{
                         delivery.setName(name.getText().toString().trim());
-                        delivery.setPhone(Integer.parseInt(phone.getText().toString().trim()));
+                        delivery.setPhone(Long.parseLong(phone.getText().toString().trim()));
                         delivery.setAddress1(address1.getText().toString().trim());
                         delivery.setAddress2(address2.getText().toString().trim());
                         delivery.setAddress3(address3.getText().toString().trim());
@@ -99,25 +114,7 @@ public class DeliveryOrder extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(),"Successfull Added! You Can Edit Your Details within 5Min! ",Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(DeliveryOrder.this,OrderComplete.class);
-
-                        String mzge1= name.getText().toString();
-                        String mzge2= phone.getText().toString();
-                        String mzge3= address1.getText().toString();
-                        String mzge4= address2.getText().toString();
-                        String mzge5= address3.getText().toString();
-                        String mzge6= email.getText().toString();
-                        String mzge7= id;
-
-                        Bundle extras = new Bundle();
-                        extras.putString("Extra1",mzge1);
-                        extras.putString("Extra2",mzge2);
-                        extras.putString("Extra3",mzge3);
-                        extras.putString("Extra4",mzge4);
-                        extras.putString("Extra5",mzge5);
-                        extras.putString("Extra6",mzge6);
-                        extras.putString("Extra7",mzge7);
-                        intent.putExtras(extras);
-
+                        intent.putExtra("id",id);
                         startActivity(intent);
 
                     }
