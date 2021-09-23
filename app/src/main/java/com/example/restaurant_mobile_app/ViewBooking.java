@@ -41,7 +41,7 @@ public class ViewBooking extends AppCompatActivity {
         time = findViewById(R.id.view_time);
         tbname = findViewById(R.id.table_view_detail_name);
 
-
+        
         final String id = getIntent().getStringExtra("id");
         Booking tbooking = dbHandler.getSingleBooking(Integer.parseInt(id));
 
@@ -51,8 +51,6 @@ public class ViewBooking extends AppCompatActivity {
         date.setText(tbooking.getDate());
         time.setText(tbooking.getTime());
         tbname.setText(tbooking.getTname());
-
-
 
     }
 }

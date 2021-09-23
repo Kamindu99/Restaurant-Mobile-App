@@ -42,7 +42,6 @@ public class EditBooking extends AppCompatActivity {
         tbname = findViewById(R.id.table_edit_detail_name);
 
 
-
         final String id = getIntent().getStringExtra("id");
         Booking tbooking = dbHandler.getSingleBooking(Integer.parseInt(id));
 
@@ -52,7 +51,6 @@ public class EditBooking extends AppCompatActivity {
         date.setText(tbooking.getDate());
         time.setText(tbooking.getTime());
         tbname.setText(tbooking.getTname());
-
 
 
         edit.setOnClickListener(new View.OnClickListener() {
@@ -73,12 +71,10 @@ public class EditBooking extends AppCompatActivity {
                     name.requestFocus();
                 }
 
-
                 else if(TextUtils.isEmpty(nic.getText())){
                     nic.setError("NIC Can't be Empty !");
                     nic.requestFocus();
                 }
-
 
                 else if(TextUtils.getTrimmedLength(nic.getText()) < 8){
                     nic.setError("Enter a valid NIC !");

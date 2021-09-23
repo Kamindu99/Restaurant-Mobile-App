@@ -123,12 +123,10 @@ public class AddBooking extends AppCompatActivity {
                     name.requestFocus();
                 }
 
-
                 else if(TextUtils.isEmpty(nic.getText())){
                     nic.setError("NIC Can't be Empty !");
                     nic.requestFocus();
                 }
-
 
                 else if(TextUtils.getTrimmedLength(nic.getText()) < 8){
                     nic.setError("Enter a valid NIC !");
