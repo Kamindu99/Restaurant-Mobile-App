@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
@@ -28,6 +29,7 @@ public class AddBooking extends AppCompatActivity {
     private EditText eText;
     private DatePickerDialog picker1;
     private EditText dte;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +47,9 @@ public class AddBooking extends AppCompatActivity {
         dte=(EditText) findViewById(R.id.add_date);
         dte.setInputType(InputType.TYPE_NULL);
 
+
         tname.setText(getIntent().getExtras().getString("table_name"));
+
 
         add = findViewById(R.id.add_button);
         context = this;
