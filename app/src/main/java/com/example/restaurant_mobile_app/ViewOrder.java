@@ -19,9 +19,8 @@ import com.google.firebase.database.ValueEventListener;
 public class ViewOrder extends AppCompatActivity {
 
     TextView name,phone,address1,address2,address3,email,headname;
-    Button btnBack;
+    Button btnBack,btncancel;
     Delivery delivery;
-    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +39,10 @@ public class ViewOrder extends AppCompatActivity {
         headname=findViewById(R.id.headname);
 
         btnBack=findViewById(R.id.btn_viewBack);
+        btncancel=findViewById(R.id.btn_canclorder);
         delivery=new Delivery();
 
-        Intent receve = getIntent();
-        Bundle page1= receve.getBundleExtra("ABC");
-        String mzge1 = page1.getString("Extra7");
-
-        id=mzge1;
+        final String id = getIntent().getStringExtra("id");
 
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -73,10 +69,40 @@ public class ViewOrder extends AppCompatActivity {
             }
         });
 
+        btncancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference upRef=FirebaseDatabase.getInstance().getReference().child("Delivery");
+                upRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.hasChild(id)){
+                            DatabaseReference deleteRef=FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
+                            deleteRef.removeValue();
+                            Toast.makeText(getApplicationContext(),"Order Cancel Successfull",Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(ViewOrder.this, PaymentComplete.class);
+                            startActivity(intent);
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No sourse to Cancel",Toast.LENGTH_SHORT).show();
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+            }
+        });
+
+
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ViewOrder.this,OrderComplete.class);
+                Intent intent = new Intent(ViewOrder.this,EditDelivery.class);
+                intent.putExtra("id",id);
                 startActivity(intent);
             }
         });

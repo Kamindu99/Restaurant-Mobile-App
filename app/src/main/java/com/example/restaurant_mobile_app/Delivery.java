@@ -3,7 +3,7 @@ package com.example.restaurant_mobile_app;
 public class Delivery {
 
     private String name;
-    private Integer phone;
+    private Long phone;
     private String address1;
     private String address2;
     private String address3;
@@ -20,11 +20,11 @@ public class Delivery {
         this.name = name;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 

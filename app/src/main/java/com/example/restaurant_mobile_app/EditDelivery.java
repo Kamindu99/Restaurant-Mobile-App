@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -26,7 +27,6 @@ public class EditDelivery extends AppCompatActivity {
     Delivery delivery;
     DatabaseReference dbRef;
     long maxID;
-    String id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +47,33 @@ public class EditDelivery extends AppCompatActivity {
 
         delivery=new Delivery();
 
+        final String id = getIntent().getStringExtra("id");
+
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
+        readRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                if(snapshot.hasChildren()){
+                    name.setText(snapshot.child("name").getValue().toString());
+                    phone.setText(snapshot.child("phone").getValue().toString());
+                    address1.setText(snapshot.child("address1").getValue().toString());
+                    address2.setText(snapshot.child("address2").getValue().toString());
+                    address3.setText(snapshot.child("address3").getValue().toString());
+                    email.setText(snapshot.child("email").getValue().toString());
+                }
+                else
+                    Toast.makeText(getApplicationContext(),"No sourse to Display",Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
         dbRef= FirebaseDatabase.getInstance().getReference().child("Delivery");
         dbRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -61,23 +88,7 @@ public class EditDelivery extends AppCompatActivity {
             }
         });
 
-        Intent receve = getIntent();
-        Bundle page1= receve.getBundleExtra("ABC");
-        String mzge1 = page1.getString("Extra1");
-        String mzge2 = page1.getString("Extra2");
-        String mzge3 = page1.getString("Extra3");
-        String mzge4 = page1.getString("Extra4");
-        String mzge5 = page1.getString("Extra5");
-        String mzge6 = page1.getString("Extra6");
-        String mzge7 = page1.getString("Extra7");
 
-        name.setText(mzge1);
-        phone.setText(mzge2);
-        address1.setText(mzge3);
-        address2.setText(mzge4);
-        address3.setText(mzge5);
-        email.setText(mzge6);
-        id=mzge7;
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,19 +99,46 @@ public class EditDelivery extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.hasChild(id)) {
                             try {
-                                delivery.setName(name.getText().toString().trim());
-                                delivery.setPhone(Integer.parseInt(phone.getText().toString().trim()));
-                                delivery.setAddress1(address1.getText().toString().trim());
-                                delivery.setAddress2(address2.getText().toString().trim());
-                                delivery.setAddress3(address3.getText().toString().trim());
-                                delivery.setEmail(email.getText().toString().trim());
+                                if (TextUtils.isEmpty(name.getText().toString())){
+                                    name.setError("Name Can't be Empty !");
+                                    name.requestFocus();
+                                }
+                                else if(TextUtils.isEmpty(phone.getText().toString()))
+                                {
+                                    phone.setError("Phone Can't be Empty !");
+                                    phone.requestFocus();
+                                }
+                                else if (TextUtils.getTrimmedLength(phone.getText()) != 10){
+                                    phone.setError("Mobile number should have 10 digits !");
+                                    phone.requestFocus();
+                                }
+                                else if(TextUtils.isEmpty(address1.getText().toString()))
+                                {
+                                    address1.setError("Address Can't be Empty !");
+                                    address1.requestFocus();
+                                }
+                                else if(TextUtils.isEmpty(email.getText().toString()))
+                                {
+                                    email.setError("Email Can't be Empty !");
+                                    email.requestFocus();
+                                }
 
-                                dbRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
-                                dbRef.setValue(delivery);
-                                Toast.makeText(getApplicationContext(), "SuccessFully Update", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(EditDelivery.this,OrderComplete.class);
-                                startActivity(intent);
+                                else {
+                                    delivery.setName(name.getText().toString().trim());
+                                    delivery.setPhone(Long.parseLong(phone.getText().toString().trim()));
+                                    delivery.setAddress1(address1.getText().toString().trim());
+                                    delivery.setAddress2(address2.getText().toString().trim());
+                                    delivery.setAddress3(address3.getText().toString().trim());
+                                    delivery.setEmail(email.getText().toString().trim());
 
+                                    dbRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
+                                    dbRef.setValue(delivery);
+                                    Toast.makeText(getApplicationContext(), "SuccessFully Update", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(EditDelivery.this, ViewOrder.class);
+                                    intent.putExtra("id",id);
+                                    startActivity(intent);
+
+                                }
                             }
 
                             catch (NumberFormatException e) {

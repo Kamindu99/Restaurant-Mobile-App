@@ -12,6 +12,7 @@
     <color name="btn_footer">#FF4747</color>
     <color name="card_item">#f7f7f7</color>
     <color name="card_name">#272f59</color>
+    <color name="details">#B5E6E5E5</color>
 
 
 </resources>

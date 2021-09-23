@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,6 +17,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/recycletable" />
+=======
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".TableList"
+android:id="@+id/table_drawer"
+tools:ignore="HardcodedText">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+>>>>>>> 1a53e5f83e863a4e164a8c47bb530f07c8f9febd
 
     </LinearLayout>
 
@@ -27,4 +41,17 @@
         app:menu="@menu/navmenu"
         android:id="@+id/navmenuview2"/>
 
+<<<<<<< HEAD
+=======
+</LinearLayout>
+
+<com.google.android.material.navigation.NavigationView
+    android:layout_width="220dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    app:headerLayout="@layout/navheader"
+    app:menu="@menu/navmenu"
+    android:id="@+id/navmenuview2"/>
+
+>>>>>>> 1a53e5f83e863a4e164a8c47bb530f07c8f9febd
 </androidx.drawerlayout.widget.DrawerLayout>
