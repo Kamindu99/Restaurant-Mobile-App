@@ -83,7 +83,7 @@ public class TableList extends AppCompatActivity {
         recyclerView2.setHasFixedSize(true);
 
         tableList=new ArrayList<>();
-        tableList.add(new TableModel(R.drawable.tablet,"2 Chair Table","Rs.200"));
+        tableList.add(new TableModel(R.drawable.table12,"2 Chair Table","Rs.200"));
         tableList.add(new TableModel(R.drawable.table3,"3 Chair Table","Rs.200"));
         tableList.add(new TableModel(R.drawable.table4,"4 Chair Table","Rs.200"));
         tableList.add(new TableModel(R.drawable.table5,"5 Chair Table","Rs.300"));

@@ -29,7 +29,8 @@
             android:layout_below="@+id/tableImg"
             android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
-            android:textSize="15dp"
+            android:textSize="17dp"
+            android:textStyle="bold"
             android:id="@+id/tableName"/>
 
         <TextView
