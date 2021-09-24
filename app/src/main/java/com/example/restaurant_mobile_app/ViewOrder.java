@@ -52,7 +52,7 @@ public class ViewOrder extends AppCompatActivity {
                     phone.setText(snapshot.child("phone").getValue().toString());
                     address.setText(snapshot.child("address").getValue().toString());
                     email.setText(snapshot.child("email").getValue().toString());
-                    headname.setText(snapshot.child("name").getValue().toString());
+                    headname.setText("Hi "+snapshot.child("name").getValue().toString()+" !");
                 }
                 else
                     Toast.makeText(getApplicationContext(),"No sourse to Display",Toast.LENGTH_SHORT).show();
