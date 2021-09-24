@@ -97,14 +97,16 @@
 
     <Button
         android:id="@+id/edit_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginTop="60dp"
         android:text="Update"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_content" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_content"
+        android:background="@drawable/btndec"
+        android:textSize="17dp"/>
 
     <TextView
         android:id="@+id/textView5"
