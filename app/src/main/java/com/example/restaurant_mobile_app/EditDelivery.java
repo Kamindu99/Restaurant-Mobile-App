@@ -2,6 +2,7 @@ package com.example.restaurant_mobile_app;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,8 +23,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class EditDelivery extends AppCompatActivity {
 
-    EditText name,phone,address1,address2,address3,email;
-    Button btnUpdate;
+    EditText name,phone,address,email;
+    public CardView continuebutton;
     Delivery delivery;
     DatabaseReference dbRef;
     long maxID;
@@ -38,12 +39,10 @@ public class EditDelivery extends AppCompatActivity {
 
         name=findViewById(R.id.edtxt_name2);
         phone=findViewById(R.id.edtxt_phone2);
-        address1=findViewById(R.id.edtxt_address_1);
-        address2=findViewById(R.id.edtxt_address_2);
-        address3=findViewById(R.id.edtxt_address3_3);
+        address=findViewById(R.id.edtxt_addressz);
         email=findViewById(R.id.edtxt_email2);
 
-        btnUpdate=findViewById(R.id.btn_editdelivery);
+        continuebutton=findViewById(R.id.btn_editdelivery);
 
         delivery=new Delivery();
 
@@ -57,9 +56,7 @@ public class EditDelivery extends AppCompatActivity {
                 if(snapshot.hasChildren()){
                     name.setText(snapshot.child("name").getValue().toString());
                     phone.setText(snapshot.child("phone").getValue().toString());
-                    address1.setText(snapshot.child("address1").getValue().toString());
-                    address2.setText(snapshot.child("address2").getValue().toString());
-                    address3.setText(snapshot.child("address3").getValue().toString());
+                    address.setText(snapshot.child("address").getValue().toString());
                     email.setText(snapshot.child("email").getValue().toString());
                 }
                 else
@@ -90,7 +87,7 @@ public class EditDelivery extends AppCompatActivity {
 
 
 
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
+        continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference upRef= FirebaseDatabase.getInstance().getReference().child("Delivery");
@@ -112,10 +109,10 @@ public class EditDelivery extends AppCompatActivity {
                                     phone.setError("Mobile number should have 10 digits !");
                                     phone.requestFocus();
                                 }
-                                else if(TextUtils.isEmpty(address1.getText().toString()))
+                                else if(TextUtils.isEmpty(address.getText().toString()))
                                 {
-                                    address1.setError("Address Can't be Empty !");
-                                    address1.requestFocus();
+                                    address.setError("Address Can't be Empty !");
+                                    address.requestFocus();
                                 }
                                 else if(TextUtils.isEmpty(email.getText().toString()))
                                 {
@@ -126,9 +123,7 @@ public class EditDelivery extends AppCompatActivity {
                                 else {
                                     delivery.setName(name.getText().toString().trim());
                                     delivery.setPhone(Long.parseLong(phone.getText().toString().trim()));
-                                    delivery.setAddress1(address1.getText().toString().trim());
-                                    delivery.setAddress2(address2.getText().toString().trim());
-                                    delivery.setAddress3(address3.getText().toString().trim());
+                                    delivery.setAddress(address.getText().toString().trim());
                                     delivery.setEmail(email.getText().toString().trim());
 
                                     dbRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(id);
