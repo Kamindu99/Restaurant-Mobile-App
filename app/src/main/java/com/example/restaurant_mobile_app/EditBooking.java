@@ -4,14 +4,21 @@ package com.example.restaurant_mobile_app;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
+
+import java.util.Calendar;
 
 public class EditBooking extends AppCompatActivity {
 
@@ -21,6 +28,9 @@ public class EditBooking extends AppCompatActivity {
     private DbHandler dbHandler;
     private Context context;
     private TextView tbname;
+    private TimePickerDialog picker;
+
+    private DatePickerDialog picker1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +61,48 @@ public class EditBooking extends AppCompatActivity {
         date.setText(tbooking.getDate());
         time.setText(tbooking.getTime());
         tbname.setText(tbooking.getTname());
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+                // date picker dialog
+                picker1 = new DatePickerDialog(EditBooking.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                                date.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                picker1.show();
+            }
+        });
+
+
+        time.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Calendar cldr = Calendar.getInstance();
+                int hour = cldr.get(Calendar.HOUR_OF_DAY);
+                int minutes = cldr.get(Calendar.MINUTE);
+                // time picker dialog
+                picker = new TimePickerDialog(EditBooking.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                            @Override
+                            public void onTimeSet(TimePicker tp, int sHour, int sMinute) {
+                                time.setText(sHour + ":" + sMinute);
+                            }
+                        }, hour, minutes, true);
+                picker.show();
+            }
+        });
+
+
 
 
         edit.setOnClickListener(new View.OnClickListener() {

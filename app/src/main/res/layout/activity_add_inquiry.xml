@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddInquiry">
+    tools:context=".AddInquiry"
+    android:background="@drawable/back">
 
 
     <TextView
         android:id="@+id/add_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="Add inquiry"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -37,7 +38,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_topic"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/add_email"
@@ -54,7 +56,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_name"
-        tools:ignore="Autofill,LabelFor,TextFields" />
+        tools:ignore="Autofill,LabelFor,TextFields"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/add_subject"
@@ -71,7 +74,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_email"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/add_content"
@@ -85,21 +89,70 @@
         android:maxHeight="100dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:paddingTop="10dp"
+        android:gravity="start|top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add_subject"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:alpha="0.8"/>
 
     <Button
         android:id="@+id/add_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
         android:layout_marginTop="60dp"
         android:text="Send"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/add_content" />
+        app:layout_constraintTop_toBottomOf="@+id/add_content"
+        android:background="@drawable/btndec"
+        android:textSize="17dp"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Enter Your Name"
+        app:layout_constraintBottom_toTopOf="@+id/add_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Enter your Email"
+        app:layout_constraintBottom_toTopOf="@+id/add_email"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Enter Subject"
+        app:layout_constraintBottom_toTopOf="@+id/add_subject"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Describe Your Inquiry "
+        app:layout_constraintBottom_toTopOf="@+id/add_content"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

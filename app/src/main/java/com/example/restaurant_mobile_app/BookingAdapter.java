@@ -38,6 +38,7 @@ public class BookingAdapter extends ArrayAdapter<Booking> {
         TextView time = row.findViewById(R.id.tt);
 
 
+
         Booking tbooking = bookings.get(position);
         tname.setText(tbooking.getTname());
         time.setText(tbooking.getDate());
