@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
-        android:fontFamily="@font/unlock"
+        app:fontFamily="@font/miltonian_tattoo"
         android:text="Hi Customer Name !"
         android:textColor="@color/white"
         android:textSize="30dp" />
@@ -42,10 +42,11 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
-            android:fontFamily="@font/new_rocker"
+            app:fontFamily="@font/miltonian_tattoo"
             android:text="This is Your Delivery Details.If You want to Edit your Order Details You can edit it whithin 5minits"
             android:textColor="@color/black"
             android:textSize="15dp"
+            android:alpha="0.8"
             android:textStyle="bold" />
 
     </LinearLayout>

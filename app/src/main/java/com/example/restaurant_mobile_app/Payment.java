@@ -49,6 +49,12 @@ public class Payment extends AppCompatActivity {
         ed_valid = findViewById(R.id.ed_valid);
         id_btnpay = findViewById(R.id.id_btnpay);
 
+        TextView textView=(TextView)findViewById(R.id.tv_payPrice);
+        Intent receve = getIntent();
+        String total = receve.getStringExtra("total");
+
+        textView.setText(total+".00");
+
         pay = new Pay();
         dbRef= FirebaseDatabase.getInstance().getReference().child("Payment");
         dbRef.addValueEventListener(new ValueEventListener() {
@@ -140,14 +146,6 @@ public class Payment extends AppCompatActivity {
         });
 
 
-
-
-
-        TextView textView=(TextView)findViewById(R.id.tv_payPrice);
-        Intent receve = getIntent();
-        String total = receve.getStringExtra("total");
-
-        textView.setText(total);
     }
 
 }

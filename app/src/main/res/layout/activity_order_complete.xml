@@ -51,6 +51,7 @@
         android:textColor="@color/black"
         android:textSize="30sp"
         android:alpha="0.7"
+        app:fontFamily="@font/miltonian_tattoo"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />

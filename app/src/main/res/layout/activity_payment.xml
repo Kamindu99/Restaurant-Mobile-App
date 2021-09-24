@@ -26,15 +26,14 @@
         android:layout_height="40dp"
         android:layout_marginStart="30dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginTop="60dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="@string/ed_name"
         android:inputType="textPersonName"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        app:layout_constraintStart_toEndOf="@+id/id_name"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/id_name"
+        app:layout_constraintStart_toEndOf="@+id/id_name" />
 
     <TextView
         android:id="@+id/id_amount"
@@ -53,8 +52,8 @@
         android:id="@+id/id_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="53dp"
         android:text="@string/id_no"
         android:textColor="@color/black"
@@ -79,10 +78,10 @@
 
     <EditText
         android:id="@+id/ed_date"
-        android:layout_width="91dp"
+        android:layout_width="100dp"
         android:layout_height="39dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
         android:layout_marginTop="42dp"
         android:background="@drawable/custom_input"
         android:ems="10"
@@ -95,10 +94,10 @@
 
     <EditText
         android:id="@+id/ed_valid"
-        android:layout_width="127dp"
+        android:layout_width="100dp"
         android:layout_height="39dp"
-        android:layout_marginStart="12dp"
-        android:layout_marginLeft="12dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="@string/ed_valid"
@@ -123,14 +122,14 @@
 
     <TextView
         android:id="@+id/tv_payPrice"
-        android:layout_width="52dp"
+        android:layout_width="wrap_content"
         android:layout_height="35dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="40dp"
+        android:text="Rs.1000"
         android:textSize="20dp"
-        app:layout_constraintStart_toEndOf="@+id/id_amount"
-        app:layout_constraintTop_toBottomOf="@+id/ed_mobileno" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/id_amount"
+        app:layout_constraintStart_toEndOf="@+id/id_amount" />
 
     <TextView
         android:id="@+id/id_Mobile"
@@ -151,15 +150,14 @@
         android:layout_height="40dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="42dp"
         android:background="@drawable/custom_input"
         android:ems="10"
         android:hint="@string/ed_mobileno"
         android:inputType="phone"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
-        app:layout_constraintStart_toEndOf="@+id/id_Mobile"
-        app:layout_constraintTop_toBottomOf="@+id/ed_name" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/id_Mobile"
+        app:layout_constraintStart_toEndOf="@+id/id_Mobile" />
 
     <ImageView
         android:id="@+id/imageView6"
