@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditInquiry">
+    tools:context=".EditInquiry"
+    android:background="@drawable/back">
 
     <TextView
         android:id="@+id/edit_topic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="60dp"
         android:text="Edit Inquiry"
         android:textColor="#000000"
         android:textSize="24sp"
@@ -35,7 +36,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_topic"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/edit_email"
@@ -52,7 +54,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_name"
-        tools:ignore="Autofill,LabelFor,TextFields" />
+        tools:ignore="Autofill,LabelFor,TextFields"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/edit_subject"
@@ -69,7 +72,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_email"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:alpha="0.8"/>
 
     <EditText
         android:id="@+id/edit_content"
@@ -80,13 +84,16 @@
         android:ems="10"
         android:hint="Content"
         android:inputType="textMultiLine"
+        android:paddingTop="10dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
+        android:gravity="start|top"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_subject"
-        tools:ignore="Autofill,LabelFor" />
+        tools:ignore="Autofill,LabelFor"
+        android:alpha="0.8"/>
 
     <Button
         android:id="@+id/edit_button"
@@ -98,4 +105,48 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_content" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Edit Your Name"
+        app:layout_constraintBottom_toTopOf="@+id/edit_name"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Edit Your Email"
+        app:layout_constraintBottom_toTopOf="@+id/edit_email"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Edit your Subject"
+        app:layout_constraintBottom_toTopOf="@+id/edit_subject"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="73dp"
+        android:layout_marginLeft="73dp"
+        android:layout_marginBottom="1dp"
+        android:text="Edit Your inquiry"
+        app:layout_constraintBottom_toTopOf="@+id/edit_content"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
