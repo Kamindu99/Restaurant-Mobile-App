@@ -19,12 +19,6 @@
         android:icon="@drawable/ic_baseline_error_24"
         android:title="About Us" />
 
-     <item
-        android:id="@+id/nav_logout"
-        android:icon="@drawable/ic_baseline_power_settings_new_24"
-        android:title="Log Out" />
-
-
 
     </group>
 

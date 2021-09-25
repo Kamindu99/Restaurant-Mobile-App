@@ -18,7 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class ViewOrder extends AppCompatActivity {
 
-    TextView name,phone,address1,address2,address3,email,headname;
+    TextView name,phone,address,email,headname;
     Button btnBack,btncancel;
     Delivery delivery;
 
@@ -32,9 +32,7 @@ public class ViewOrder extends AppCompatActivity {
 
         name=findViewById(R.id.tv_disName);
         phone=findViewById(R.id.tv_disPhone);
-        address1=findViewById(R.id.tv_disAddress1);
-        address2=findViewById(R.id.tv_disAddress2);
-        address3=findViewById(R.id.tv_disAddress3);
+        address=findViewById(R.id.tv_disAddress);
         email=findViewById(R.id.tv_disEmail);
         headname=findViewById(R.id.headname);
 
@@ -52,11 +50,9 @@ public class ViewOrder extends AppCompatActivity {
                 if(snapshot.hasChildren()){
                     name.setText(snapshot.child("name").getValue().toString());
                     phone.setText(snapshot.child("phone").getValue().toString());
-                    address1.setText(snapshot.child("address1").getValue().toString());
-                    address2.setText(snapshot.child("address2").getValue().toString());
-                    address3.setText(snapshot.child("address3").getValue().toString());
+                    address.setText(snapshot.child("address").getValue().toString());
                     email.setText(snapshot.child("email").getValue().toString());
-                    headname.setText(snapshot.child("name").getValue().toString());
+                    headname.setText("Hi "+snapshot.child("name").getValue().toString()+" !");
                 }
                 else
                     Toast.makeText(getApplicationContext(),"No sourse to Display",Toast.LENGTH_SHORT).show();

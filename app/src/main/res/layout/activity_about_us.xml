@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="39dp"
         android:text="@string/tv_foodfactory"
         android:textColor="@color/black"
         android:textSize="34sp"
@@ -93,10 +93,10 @@
         android:layout_height="147dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="31dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logoaaaa" />
 
     <TextView
         android:id="@+id/tv_likeus"

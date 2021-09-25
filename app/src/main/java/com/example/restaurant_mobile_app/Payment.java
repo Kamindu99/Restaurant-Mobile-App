@@ -49,6 +49,12 @@ public class Payment extends AppCompatActivity {
         ed_valid = findViewById(R.id.ed_valid);
         id_btnpay = findViewById(R.id.id_btnpay);
 
+        TextView textView=(TextView)findViewById(R.id.tv_payPrice);
+        Intent receve = getIntent();
+        String total = receve.getStringExtra("total");
+
+        textView.setText(total+".00");
+
         pay = new Pay();
         dbRef= FirebaseDatabase.getInstance().getReference().child("Payment");
         dbRef.addValueEventListener(new ValueEventListener() {
@@ -109,10 +115,6 @@ public class Payment extends AppCompatActivity {
                         ed_valid.requestFocus();
                     }
 
-
-
-
-
                     else{
                         pay.setName(ed_name.getText().toString().trim());
                         pay.setMobileno(Integer.parseInt(ed_mobileno.getText().toString().trim()));
@@ -130,6 +132,8 @@ public class Payment extends AppCompatActivity {
                         String mzge= id;
                         Bundle extras = new Bundle();
                         extras.putString("Extra",mzge);
+                        extras.putString("foodname",getIntent().getExtras().getString("fname"));
+                        extras.putInt("foodImg",getIntent().getExtras().getInt("fImg"));
                         intent.putExtras(extras);
                         startActivity(intent);
 
@@ -142,14 +146,6 @@ public class Payment extends AppCompatActivity {
         });
 
 
-
-
-
-        TextView textView=(TextView)findViewById(R.id.tv_payPrice);
-        Intent receve = getIntent();
-        String total = receve.getStringExtra("total");
-
-        textView.setText(total);
     }
 
 }

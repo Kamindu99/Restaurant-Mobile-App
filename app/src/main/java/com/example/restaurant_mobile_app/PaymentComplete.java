@@ -45,7 +45,10 @@ public class PaymentComplete extends AppCompatActivity {
         toast.setGravity(Gravity.BOTTOM | Gravity.CENTER, 0, 100);
         toast.show();
 
+        Intent intent2= getIntent();
+        Bundle bundle=intent2.getExtras();
         Intent intent = new Intent(PaymentComplete.this, DeliveryOrder.class);
+        intent.putExtra("ABC",bundle);
         startActivity(intent);
     }
 

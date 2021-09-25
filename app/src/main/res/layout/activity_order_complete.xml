@@ -4,16 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".OrderComplete"
-    android:background="@drawable/odercom">
+    tools:context=".OrderComplete">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#53614e"
-        android:alpha="0.5">
+        android:background="#91b8a3"
+        android:alpha="1">
 
 
     </RelativeLayout>
@@ -32,11 +31,11 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="90dp"
-        android:layout_height="90dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="34dp"
+        android:layout_marginTop="42dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/right" />
@@ -49,8 +48,10 @@
         android:layout_marginLeft="12dp"
         android:layout_marginTop="44dp"
         android:text="@string/tv_odercmplted"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="30sp"
+        android:alpha="0.7"
+        app:fontFamily="@font/miltonian_tattoo"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -78,6 +79,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_thankyou" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="match_parent"
+        android:layout_height="219dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:baselineAlignBottom="true"
+        android:alpha="0.6"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/deliveryboy" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

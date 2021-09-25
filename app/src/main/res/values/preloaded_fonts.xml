@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/atomic_age</item>
         <item>@font/bangers</item>
+        <item>@font/bigshot_one</item>
+        <item>@font/eagle_lake</item>
+        <item>@font/eater</item>
+        <item>@font/im_fell_french_canon_sc</item>
+        <item>@font/jacques_francois_shadow</item>
+        <item>@font/miltonian_tattoo</item>
+        <item>@font/new_rocker</item>
+        <item>@font/ravi_prakash</item>
+        <item>@font/ruslan_display</item>
+        <item>@font/unlock</item>
     </array>
 </resources>

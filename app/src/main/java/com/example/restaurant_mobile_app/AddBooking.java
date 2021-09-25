@@ -118,8 +118,8 @@ public class AddBooking extends AppCompatActivity {
                     name.requestFocus();
                 }
 
-                else if(TextUtils.getTrimmedLength(name.getText()) < 4){
-                    name.setError("Name must have atleast 4 letters !");
+                else if(TextUtils.getTrimmedLength(name.getText()) <3){
+                    name.setError("Name must have atleast 3 letters !");
                     name.requestFocus();
                 }
 

@@ -20,8 +20,8 @@ import android.widget.Toast;
 
 public class CalPrice extends AppCompatActivity {
     ImageView foodImg;
-    TextView foodName,foodprice,total,value;
-    Button GoPayment;
+    TextView foodName,foodprice,total,value,schage,tax,ftotal;
+    Button GoPayment,plus,minus;
     int count =1;
 
     @Override
@@ -38,8 +38,13 @@ public class CalPrice extends AppCompatActivity {
         foodprice=findViewById(R.id.food_detail_price);
         total=findViewById(R.id.total);
         value=findViewById(R.id.value);
+        schage=findViewById(R.id.schage);
+        tax=findViewById(R.id.taxTxt);
+        ftotal=findViewById(R.id.ftotal);
 
         GoPayment=findViewById(R.id.food_detail_btn);
+        plus=findViewById(R.id.plus);
+        minus=findViewById(R.id.minus);
 
         foodImg.setImageResource(getIntent().getExtras().getInt("Image_id"));
         foodName.setText(getIntent().getExtras().getString("food_name"));
@@ -58,7 +63,8 @@ public class CalPrice extends AppCompatActivity {
                 {
                     int temp1 = Integer.parseInt(foodprice.getText().toString());
                     int temp2 = Integer.parseInt(value.getText().toString());
-                    total.setText(String.valueOf(temp1*temp2));
+                    total.setText("Rs. "+String.valueOf(temp1*temp2));
+                    ftotal.setText("Rs. "+String.valueOf((temp1*temp2*108)/100));
                 }
             }
 
@@ -84,25 +90,37 @@ public class CalPrice extends AppCompatActivity {
 
                 Intent intent = new Intent(CalPrice.this, Payment.class);
 
-                TextView textView=(TextView)findViewById(R.id.total);
+                TextView textView=(TextView)findViewById(R.id.ftotal);
 
                 String totalp= textView.getText().toString();
                 intent.putExtra("total",totalp);
+                intent.putExtra("fname",getIntent().getExtras().getString("food_name"));
+                intent.putExtra("fImg",getIntent().getExtras().getInt("Image_id"));
                 startActivity(intent);
                 }
 
 
         });
+
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                count++;
+                value.setText(""+ count);
+            }
+        });
+
+        minus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(count<=1) count=1;
+                else count--;
+                value.setText(""+count);
+            }
+        });
+
+
     }
 
-    public void increment(View view){
-        count++;
-        value.setText(""+ count);
-    }
-    public void decrement(View view){
-        if(count<=1) count=1;
-        else count--;
-        value.setText(""+count);
-    }
 
     }
