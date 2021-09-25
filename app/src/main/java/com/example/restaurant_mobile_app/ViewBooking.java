@@ -14,11 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class ViewBooking extends AppCompatActivity {
-
-
-
     private EditText tname, name, nic, date, time;
-
     private DbHandler dbHandler;
     private Context context;
     private TextView tbname;

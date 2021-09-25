@@ -21,15 +21,12 @@ import android.widget.TimePicker;
 import java.util.Calendar;
 
 public class EditBooking extends AppCompatActivity {
-
-
     private EditText tname, name, nic, date, time;
     private Button edit;
     private DbHandler dbHandler;
     private Context context;
     private TextView tbname;
     private TimePickerDialog picker;
-
     private DatePickerDialog picker1;
 
     @Override

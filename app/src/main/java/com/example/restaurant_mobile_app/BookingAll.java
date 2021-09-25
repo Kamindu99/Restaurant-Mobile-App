@@ -45,8 +45,6 @@ public class BookingAll extends AppCompatActivity {
         BookingAdapter adapter = new BookingAdapter(context,R.layout.single_booking,bookings);
         listView.setAdapter(adapter);
 
-
-
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -65,6 +63,7 @@ public class BookingAll extends AppCompatActivity {
 
                     }
                 });
+
                 builder.setNegativeButton("Edit Booking", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

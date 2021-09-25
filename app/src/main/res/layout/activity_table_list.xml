@@ -7,6 +7,7 @@
     tools:context=".TableList"
     android:id="@+id/table_drawer"
     tools:ignore="HardcodedText"
+    android:background="@drawable/detailsimg"
     >
 
     <LinearLayout

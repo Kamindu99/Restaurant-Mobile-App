@@ -92,6 +92,7 @@ public class TableList extends AppCompatActivity {
         tableList.add(new TableModel(R.drawable.drinktable,"Drinking Table","Rs.400"));
         tableList.add(new TableModel(R.drawable.bdaytable,"Birthday Table","Rs.500"));
         tableList.add(new TableModel(R.drawable.tablegreen,"Green Room","Rs.1000"));
+        tableList.add(new TableModel(R.drawable.drinktable,"Party Table","Rs.1000"));
 
         TableAdapter adapter=new TableAdapter(tableList,this);
         recyclerView2.setAdapter(adapter);

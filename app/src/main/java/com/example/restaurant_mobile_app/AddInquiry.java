@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class AddInquiry extends AppCompatActivity {
-
     private EditText name, email, subject, content;
     private Button add;
     private DatabaseHandler dbHandler;
@@ -37,22 +36,18 @@ public class AddInquiry extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (TextUtils.isEmpty(name.getText())){
-
                     name.setError("Name Can't be Empty !");
                     name.requestFocus();
                 }
                 else if (TextUtils.isEmpty(email.getText())){
-
                     email.setError("Email Can't be Empty !");
                     email.requestFocus();
                 }
                 else if (TextUtils.isEmpty(subject.getText())){
-
                     subject.setError("Subject Can't be Empty !");
                     subject.requestFocus();
                 }
                 else if (TextUtils.isEmpty(content.getText())){
-
                     content.setError("Content Can't be Empty !");
                     content.requestFocus();
                 }
