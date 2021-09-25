@@ -6,9 +6,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class AddInquiry extends AppCompatActivity {
     private EditText name, email, subject, content;
@@ -43,7 +45,16 @@ public class AddInquiry extends AppCompatActivity {
                     email.setError("Email Can't be Empty !");
                     email.requestFocus();
                 }
+<<<<<<< HEAD
                 else if (TextUtils.isEmpty(subject.getText())){
+=======
+                else if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString()).matches()){
+
+                    email.setError("Invalid Email Address !");
+                    email.requestFocus();
+                } else if (TextUtils.isEmpty(subject.getText())){
+
+>>>>>>> 4ebdd5702dd771408ba31b9c60d1028132001114
                     subject.setError("Subject Can't be Empty !");
                     subject.requestFocus();
                 }
@@ -58,6 +69,7 @@ public class AddInquiry extends AppCompatActivity {
                     String userContent = content.getText().toString();
 
                     Inquiry inquiry = new Inquiry(userName, userEmail, userSubject, userContent);
+                    Toast.makeText(getApplicationContext(), "Inquiry added successfully", Toast.LENGTH_LONG).show();
                     dbHandler.addInquiry(inquiry);
 
                     startActivity(new Intent(context, AllInquiry.class));

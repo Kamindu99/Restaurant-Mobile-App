@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
@@ -65,6 +66,7 @@ public class AllInquiry extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int which) {
 
                         dbHandler.deleteInquiry(inquiry.getId());
+                        Toast.makeText(getApplicationContext(), "Inquiry delete successfully", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(context,AllInquiry.class));
 
                     }
